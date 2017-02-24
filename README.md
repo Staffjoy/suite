@@ -44,9 +44,25 @@ INTERCOM_API_KEY | Optional - Intercom API key used for sending events to the In
 TWILIO_ACCOUNT_SID | API Key for [Twilio](http://twilio.com) - note that the `TWILIO_NUMBER` variable in `config.py` needs to be updated with sending phone numbers that you own for this to work. | 
 TWILIO_AUTH_TOKEN | Twilio secret key | 
 
-### Monitoring
+## Required and Optional Services
 
-Check `/health` to see if the instance is healthy
+### Cron
+
+The `/api/v2/internal/cron/` endpoint must be triggered every 60 seconds. We are open-sourcing a microserviec to do this soon. 
+
+Alternatively, consider just using a Jenkins job with:
+
+```curl --user API_KEY: http://suite.local/api/v2/internal/cron/```
+
+(*NOTE*: the trailing colon after the API key is required)
+
+### Chomp
+
+Required for calculating shifts from forecasts. Coming soon.
+
+### Mobius
+
+Required for assigning shifts. Coming soon.
 
 ### How we deployed
 
@@ -244,26 +260,6 @@ python main.py db heads
 # Using the two hashes
 python main.py db merge <hash1> <hash2>
 ```
-
-## Required and Optional Services
-
-### Cron
-
-The `/api/v2/internal/cron/` endpoint must be triggered every 60 seconds. We are open-sourcing a microserviec to do this soon. 
-
-Alternatively, consider just using a Jenkins job with:
-
-```curl --user API_KEY: http://suite.local/api/v2/internal/cron/```
-
-(*NOTE*: the trailing colon after the API key is required)
-
-### Chomp
-
-Required for calculating shifts from forecasts. Coming soon.
-
-### Mobius
-
-Required for assigning shifts. Coming soon.
 
 ## Other Features
 
