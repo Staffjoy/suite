@@ -1,0 +1,28 @@
+{% extends "bootstrap.html" %}
+
+{% block page_id %}auth{% endblock %}
+
+{% block page_class %}unconfirmed{% endblock %}
+
+{% block content %}
+<div class="container unconfirmed-container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-sm-12">
+            <div class="panel card">
+                <div class="panel-heading page-header">
+                    <h1 class="panel-title">Confirm Account</h1>
+                </div>
+
+                <div class="panel-body">
+                    <p>You have not confirmed your account email yet.</p>
+                    <p>Before you can access this site you need to confirm your email address. Please check your inbox, you should have received an email with a confirmation link.</p>
+                    <p>Need another confirmation email?</p>
+                    <a href="{{ url_for('auth.resend_confirmation') }}" class="btn btn-sm btn-warning">Resend Confirmation</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+

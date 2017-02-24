@@ -1,0 +1,49 @@
+{% extends "bootstrap.html" %}
+
+{% block page_id %}case-study-list{% endblock %}
+{% block title %}Case Studies{% endblock %}
+{% block description %}Analysis of how Staffjoy decreases labor costs.{% endblock %}
+
+{% block content %}
+<script>
+    $(document).ready(function(){
+        $(".case-study-card").click(function(e) {
+            var self = this,
+                $target = $(e.target).closest(".case-study-card"),
+                path = $target.attr("data-path")
+            ;
+            e.preventDefault();
+            e.stopPropagation();
+            window.location.href = path;
+        });
+    });
+</script>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+            <h1>Case Studies</h1>
+            {% if studies|length == 0 %}
+            <div class="alert alert-info">
+                <h4>Coming Soon!</h4>
+                <p>Our first case study will be published soon. Check out <a href="https://blog.staffjoy.com">Blog.Staffjoy.com</a> for more information about our deployments.</p>
+            </div>
+            {% endif %}
+            {% for key, data in studies.iteritems() %}
+                <div class="panel card case-study-card" data-path="{{ url_for("main.case_study", slug=key) }}">
+                    <div class="panel-heading page-header">
+                        <div class="pull-right">
+                            <a class="btn btn-primary btn-sm button-align" href="{{ url_for("main.case_study", slug=key) }}">View</a>
+                        </div>
+                        <h3 class="panel-title location-card-title">
+                            {{ data["short_name"] }}
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>{{ data["summary"] }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+<div>
+{% endblock %}

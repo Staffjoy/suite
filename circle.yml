@@ -1,0 +1,23 @@
+machine:
+  timezone:
+    America/Los_Angeles
+  python:
+    version: 2.7.10
+  environment:
+    PYTHONPATH: "/home/ubuntu/app/"
+    TEST_DATABASE_URL: "mysql://ubuntu@localhost/circle_test"
+    ENV: "test"
+  services:
+    - redis
+dependencies:
+  override:
+    - mysql -u ubuntu circle_test -e "drop database test; create database test;"
+    - make build
+    - make db-deploy
+    - python test-sudo.py
+    - python main.py runtestserver > log.txt:
+        background: true
+    - sleep 30  # so server can boot
+test:
+  override:
+    - make test

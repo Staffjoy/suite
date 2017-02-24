@@ -1,0 +1,17 @@
+{{^multipleActions}}
+<button type="button" class="btn btn-primary btn-sm header-action mobile-header-action-btn" data-id="{{data}}">
+    <i class="glyphicon glyphicon-plus mobile-action-button" aria-hidden="true"></i>
+</button>
+{{/multipleActions}}
+{{#multipleActions}}
+<div class="dropup">
+    <button class="btn btn-primary btn-sm dropdown-toggle mobile-header-action-btn" data-toggle="dropdown" role="button" aria-expanded="false">
+        <i class="glyphicon glyphicon-plus mobile-action-button" aria-hidden="true"></i>
+    </button>
+    <ul class="dropdown-menu scrollable-menu dropdown-menu-right" aria-labelledby="action-button" role="menu">
+        {{#data}}
+        <li role="presentation"><a class="dropup-selection header-action" data-id="{{id}}" role="menuitem">{{label}}</a></li>
+        {{/data}}
+    </ul>
+</div>
+{{/multipleActions}}

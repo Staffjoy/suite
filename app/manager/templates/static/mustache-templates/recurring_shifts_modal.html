@@ -1,0 +1,95 @@
+<div class="modal fade smoky-bg" id="recurring-shifts-modal" data-id="recurringShiftEdit" tabindex="-1" role="dialog" aria-labelledby="recurringShiftsLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">
+                    {{#edit}}Edit Recurring Shift{{/edit}}
+                    {{^edit}}Create a Recurring Shift{{/edit}}
+                </h4>
+            </div>
+            <div class="modal-body container-fluid">
+                <div class="modal-description">Recurring shifts repeat every week, and allow you to add common shift rotations or give a worker consistency. After being created, they are added automatically to future schedules. Recurring shifts are not added to schedules that have already been published.</div>
+                <div class="row recurring-shifts-worker">
+                    <div class="col-xs-5">Worker:</div>
+                    <div class="col-xs-7">
+                    {{#name}}
+                    {{name}}
+                    {{/name}}
+                    {{^name}}
+                    <select class="recurring-shift-worker-select">worker select</select>
+                    {{/name}}
+                    </div>
+                </div>
+                {{^name}}
+                <div class="row recurring-shifts-quantity">
+                    <div class="col-xs-5">Quantity (if unassigned):</div>
+                    <div class="col-xs-7">
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true" {{^unassigned}}disabled{{/unassigned}}>
+                                <span class="dropdown-value"></span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu scrollable-menu" role="menu" aria-labelledby="quantity"></ul>
+                        </div>
+                    </div>
+                </div>
+                {{/name}}
+                <div class="row recurring-shifts-day-of-week">
+                    <div class="col-xs-5">Day of Week:</div>
+                    <div class="col-xs-7">
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
+                                <span class="dropdown-value"></span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu scrollable-menu" role="menu" aria-labelledby="quantity"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row recurring-shifts-start">
+                    <div class="col-xs-5">Start Time:</div>
+                    <div class="col-xs-7">
+                        <div class="input-group bootstrap-timepicker timepicker">
+                            <input id="recurring-shifts-start-timepicker" type="text" class="form-control input-small"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row recurring-shifts-duration">
+                    <div class="col-xs-5">Duration:</div>
+                    <div class="col-xs-7 recurring-shifts-duration-options">
+                        <div class="recurring-shifts-duration-hours">
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
+                                    <span class="dropdown-value"></span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu scrollable-menu" role="menu" aria-labelledby="quantity"></ul>
+                            </div>
+                        </div>
+                        <div class="recurring-shifts-duration-label">hours</div>
+                        <div class="recurring-shifts-duration-minutes">
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
+                                    <span class="dropdown-value"></span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu scrollable-menu" role="menu" aria-labelledby="quantity"></ul>
+                            </div>
+                        </div>
+                        <div class="recurring-shifts-duration-label">minutes</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-primary save-button">Save</button>
+                {{#edit}}
+                <button type="button" class="btn btn-sm btn-danger delete-button">Delete</button>
+                {{/edit}}
+                <button type="button" class="btn btn-sm btn-info" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

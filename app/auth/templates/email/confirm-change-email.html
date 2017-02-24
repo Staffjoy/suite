@@ -1,0 +1,4 @@
+<h1>Confirm your email address</h1>
+<p>{{ user.name }},</p>
+<p>To confirm this new email address for your account, please click this link:</p>
+<a href="{{ url_for('auth.change_email', token=token, _external=True) }}">{{ url_for('auth.change_email', token=token, _external=True) }}</a>

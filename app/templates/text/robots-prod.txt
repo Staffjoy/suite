@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /bootstrap-demo/
+Disallow: /terms/
+Disallow: /privacy-policy/
+Disallow: /cdn-cgi/ # Cloudflare
+Disallow: /auth/native # Used in packaged apps
+Disallow: /api/

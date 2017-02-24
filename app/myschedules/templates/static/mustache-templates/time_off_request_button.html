@@ -1,0 +1,22 @@
+<div class="time-off-request-button-container">
+    {{#new}}
+    <button type="button" class="btn btn-default secondary btn-xs request-time-off">
+        Request off
+    </button>
+    {{/new}}
+    {{#pending}}
+    <button type="button" class="btn btn-info btn-xs cancel-time-off-request">
+        Pending<i class="fa fa-times cancel-icon"></i>
+    </button>
+    {{/pending}}
+    {{#approved}}
+    <button type="button" class="btn btn-success btn-xs disabled">
+        Approved
+    </button>
+    {{/approved}}
+    {{#denied}}
+    <button type="button" class="btn btn-danger btn-xs disabled">
+        Denied
+    </button>
+    {{/denied}}
+</div>

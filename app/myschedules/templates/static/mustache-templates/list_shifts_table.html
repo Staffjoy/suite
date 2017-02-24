@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 card-elements roomy">
+            {{#data}}
+            <span class="card-element condensed shift-info" id="{{id}}" data-shift-id="{{id}}" data-schedule-id="{{schedule_id}}">
+                <div class="content-no-title">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            {{date}}
+                        </div>
+                        <div class="col-xs-3">
+                            {{dayName}}.
+                        </div>
+                        <div class="col-xs-7 text-left">
+                            {{ start }} - {{end}}
+                        </div>
+                        {{#description}}
+                            <div class="col-xs-12 shift-description text-left">
+                                <div class="label label-info pull-left shift-description-label">
+                                    Note:
+                                </div>
+                                <span class="text-info">{{description}}</span>
+                            </div>
+                        {{/description}}
+                    </div>
+                </div>
+            </span>
+            {{/data}}
+            {{^data}}
+            No shifts this week
+            {{/data}}
+        </div>
+    </div>
+</div>

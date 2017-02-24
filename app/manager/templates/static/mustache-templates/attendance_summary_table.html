@@ -1,0 +1,20 @@
+<table class="table table-striped table-hover table-condensed-more no-bottom">
+    <thead>
+        <th class="col-xs-4">Worker</th>
+        <th class="col-xs-2 text-right">Scheduled Time</th>
+        <th class="col-xs-2 text-right">Logged Time</th>
+        <th class="col-xs-2 text-center">Shifts</th>
+        <th class="col-xs-2 text-center">Timeclocks</th>
+    </thead>
+    <tbody>
+        {{#data}}
+        <tr>
+            <td>{{name}} ({{role}})</td>
+            <td class="text-right">{{scheduled_time}}</td>
+            <td class="text-right">{{logged_time}}</td>
+            <td class="text-center">{{shift_count}}</td>
+            <td class="text-center">{{timeclock_count}}</td>
+        </tr>
+        {{/data}}
+    </tbody>
+</table>

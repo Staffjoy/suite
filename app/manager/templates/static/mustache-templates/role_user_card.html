@@ -1,0 +1,27 @@
+<div class="email-reminder-modal-placeholder"></div>
+<div class="panel card">
+    <div class="panel-heading page-header">
+        <h3 class="panel-title">
+            Workers
+        </h3>
+    </div>
+    <div class="container-fluid">
+        <div class="row worker-list">
+            <div class="col-xs-12 card-elements">
+                {{#data}}
+                <span class="card-element card-element-active condensed user-info" data-id="{{id}}">
+                    <div class="content-no-title">
+                        {{userName}}
+                        <div class="hidden-xs pull-right delete-user glyphicon glyphicon-remove"></div>
+                        {{^active}}
+                        <span class="cursor-clickable reminder-email label label-warning pull-right">
+                            Inactive
+                        </span>
+                        {{/active}}
+                    </div>
+                </span>
+                {{/data}}
+            </div>
+        </div>
+    </div>
+</div>

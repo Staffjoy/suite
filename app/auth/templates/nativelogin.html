@@ -1,0 +1,37 @@
+{% extends "auth.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block form_title %}Login{% endblock %}
+{% block head_extra %}
+<style type="text/css">
+    .hidden-native { display: none; }
+    #main-header { display: none; }
+    body { padding-top: 35px; }
+    .native-login-image { width: 100%; }
+</style>
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+            <img src="/static/images/brand-assets/logo/logo.svg" alt="Staffjoy" class="native-login-image"/>
+        </div>
+    </div>
+</div>
+
+{{super()}}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-sm-12">
+            <div class="text-center text-muted">
+                <a href="{{url_for("auth.password_reset_request")}}">
+                    <i class="glyphicon glyphicon-lock"></i> Reset your password
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

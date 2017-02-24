@@ -1,0 +1,30 @@
+<div class="modal fade smoky-bg" id="edit-location-managers-modal" tabindex="-1" role="dialog" aria-labelledby="editLocationsManagersModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Edit Location Manager</h4>
+            </div>
+            <div class="modal-body container-fluid">
+                <div>To add {{#name}}{{name}} {{/name}}{{^name}}{{email}} {{/name}} as a manager of a new location, please visit the settings in that locations.</div>
+                <div class="row">
+                    <div class="col-xs-12 card-elements">
+                        {{#locations}}
+                        <span id="edit-location-manager-row-{{id}}" class="card-element card-element-active condensed user-info">
+                            <div class="content-no-title">
+                                {{{name}}
+                                <div class="pull-right delete-location-manager glyphicon glyphicon-remove" data-id="{{id}}"></div>
+                            </div>
+                        </span>
+                        {{/locations}}
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-info" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,73 @@
+#confirm_free_trial {
+    background-color: @alt-background;
+}
+#auth {
+    background-color: @alt-background;
+    .auth-container {
+        padding-top: 20px;
+    }
+
+    .panel-body {
+        .btn {
+            .btn-success;
+        }
+        &.dangerous-buttons {
+          .btn {
+              .btn-danger;
+          }
+        }
+    }
+
+    .btn-center {
+        text-align: center;
+    }
+
+    .delete-session {
+        color: @brand-danger-soft;
+        text-align: center;
+        cursor: pointer;
+
+        &:hover {
+            color: @brand-danger;
+        }
+    }
+    .delete-sessions {
+        text-align: center;
+        .btn {
+            .btn-danger;
+        }
+    }
+
+    .unconfirmed-container {
+        padding-top: 20px;
+    }
+    .forgot-password {
+        padding: 10px 0 30px 0;
+    }
+    .change-password {
+        padding: 10px 0 30px 0;
+    }
+    #bootstrap-footer {
+        margin-top: 15px;
+    }
+    .api-key {
+        font-family: @font-family-monospace;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+}
+
+#portal {
+    background-color: @alt-background;
+    .well {
+        padding: 20px 0;
+        .btn {
+            .btn-block;
+            white-space: normal;
+            padding: 35px inherit;
+        }
+    }
+    #bootstrap-footer {
+        margin-top: 15px;
+    }
+}

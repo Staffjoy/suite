@@ -1,0 +1,42 @@
+<div class="panel card">
+    <div class="panel-heading page-header">
+        <div class="pull-right">
+            <button class="btn btn-default btn-sm button-align collapse-button collapse-btn-timeclock-preferences" type="button" data-toggle="collapse" data-target=".timeclock-collapse">
+                <span class="glyphicon glyphicon-chevron-down"></span>
+            </button>
+        </div>
+        <h3 class="panel-title">Timeclock Preferences</h3>
+    </div>
+    <div class="container-fluid card-table-container panel-collapse collapse timeclock-collapse" data-collapse-id="timeclock-preferences">
+        <div class="card-table-indent bottom">
+            <p>Timeclock can be turned on for any role. New roles will be given the default value.</p>
+            <div class="default-timeclock">
+                <label>New Role Default:</label>
+                <span class="timeclock-radio default-setting" data-current-value="{{default}}">
+                    <div class="btn-group btn-group-sm" role="group" aria-label="...">
+                        <button type="button" class="btn {{#default}} btn-primary active {{/default}}{{^default}} btn-default {{/default}} true adjust-timeclock-state" data-value="true">On</button>
+                        <button type="button" class="btn btn-default {{^default}} active {{/default}} false adjust-timeclock-state" data-value="false">Off</button>
+                    </div>
+                </span>
+            </div>
+            {{#preferences}}
+            <h4>{{locationName}}</h4>
+            <table class="table table-hover table-condensed no-bottom">
+                <tbody>
+                    {{#roles}}
+                    <tr>
+                        <td class="col-xs-10">{{roleName}}</td>
+                        <td class="col-xs-2 timeclock-radio" data-location-id="{{locationId}}" data-role-id="{{roleId}}" data-current-value="{{enable_timeclock}}">
+                            <div class="btn-group btn-group-sm" role="group" aria-label="...">
+                                <button type="button" class="btn {{#enable_timeclock}} btn-primary active {{/enable_timeclock}}{{^enable_timeclock}} btn-default {{/enable_timeclock}} true adjust-timeclock-state" data-value="true">On</button>
+                                <button type="button" class="btn btn-default {{^enable_timeclock}} active {{/enable_timeclock}} false adjust-timeclock-state" data-value="false">Off</button>
+                            </div>
+                        </td>
+                    </tr>
+                    {{/roles}}
+                </tbody>
+            </table>
+            {{/preferences}}
+        </div>
+    </div>
+</div>

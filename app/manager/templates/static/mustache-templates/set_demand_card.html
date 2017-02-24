@@ -1,0 +1,76 @@
+<div class="panel card role-demand hidden-xs hidden-sm" id="demand-{{roleId}}">
+    <div class="panel-heading page-header">
+        {{#disabled}}
+        <div class="pull-right">
+            <button class="btn btn-default btn-sm button-align collapse-button collapse-button-{{roleId}}" type="button" data-toggle="collapse" data-target=".demand-card-content-{{roleId}}">
+                <span class="glyphicon glyphicon-chevron-down"></span>
+            </button>
+        </div>
+        {{/disabled}}
+        {{^disabled}}
+            {{#previousSchedule}}
+            <div class="pull-right">
+                <div class="btn btn-default secondary btn-sm button-align demand-button" data-role-name="{{roleName}}" data-start="{{start}}" data-action="copy"><span class="glyphicon glyphicon-share-alt"></span> Copy last week's demand</div>
+            </div>
+            {{/previousSchedule}}
+        {{/disabled}}
+        <h3 class="panel-title">
+            {{^disabled}}Set {{/disabled}} Demand for {{roleName}}
+        </h3>
+    </div>
+    <div class="container-fluid demand-card-content-{{roleId}} {{#disabled}}panel-collapse collapse{{/disabled}}" data-collapse-id="{{roleId}}">
+        <div class="panel-body">
+            {{^disabled}}
+            <div class="card-description">Set hour-by-hour how many workers you need throughout the week. Staffjoy will calculate the shifts needed to meet this demand.</div>
+            {{/disabled}}
+            {{#message}}
+            <div class="row">
+                <div class="alert card-message alert-info">
+                    {{message}}
+                </div>
+            </div>
+            {{/message}}
+            <div class="spreadsheet-placeholder-{{roleId}} spreadsheet-container"></div>
+            {{^disabled}}
+            <div class="set-demand-params">
+                <div class="card-description">Shifts will be between
+                    <span>
+                        <div class="dropdown" data-param-name="min_shift_length_hour">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="min_shift_length_hour" data-toggle="dropdown" aria-expanded="true">
+                                <span class="dropdown-value" data-counterpart="max_shift_length_hour"></span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu scrollable-menu" role="menu" aria-labelledby="min_shift_length_hour"></ul>
+                        </div>
+                    </span> and <span>
+                        <div class="dropdown" data-param-name="max_shift_length_hour">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="max_shift_length_hour" data-toggle="dropdown" aria-expanded="true">
+                                <span class="dropdown-value" data-counterpart="min_shift_length_hour"></span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu scrollable-menu" role="menu" aria-labelledby="max_shift_length_hour"></ul>
+                        </div>
+                    </span> long.
+                </div>
+                <div class="save-btn">
+                    <div class="btn btn-default secondary btn-md demand-button pull-left discard-button" data-roleId="{{roleName}}" data-action="discard"><i class="fa fa-trash"></i>Discard</div>
+                    <div class="btn btn-default secondary btn-md demand-button" data-roleId="{{roleName}}" data-action="save"><i class="fa fa-floppy-o"></i>Save for later</div>
+                    <div class="btn btn-primary btn-md demand-button" data-roleId="{{roleName}}" data-action="calculate"><i class="fa fa-calculator"></i>Calculate now</div>
+                </div>
+            </div>
+            {{/disabled}}
+        </div>
+    </div>
+</div>
+<div class="panel card role-demand visible-xs-block visible-sm-block" id="demand-{{roleId}}">
+    <div class="panel-heading page-header">
+        <h3 class="panel-title">
+            {{^disabled}}Set {{/disabled}} Demand for {{roleName}}
+        </h3>
+    </div>
+    <div class="container-fluid demand-card-content-{{roleId}} {{#disabled}}panel-collapse collapse{{/disabled}}" data-collapse-id="{{roleId}}">
+        <div class="panel-body">
+            <div class="card-description">To access this feature, please use on desktop.</div>
+        </div>
+    </div>
+</div>

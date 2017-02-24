@@ -1,0 +1,35 @@
+DAYS_OF_WEEK = [
+    "monday", "tuesday", "wednesday", "thursday", "friday", "saturday",
+    "sunday"
+]
+WEEK_LENGTH = 7
+MAX_TIMECLOCK_HOURS = 23
+DAY_LENGTH = 24
+SECONDS_PER_MINUTE = 60
+SECONDS_PER_HOUR = 3600
+SECONDS_PER_DAY = 86400
+MAX_SHIFT_LENGTH = 82800  # 23 * SECONDS_PER_HOUR
+
+MINUTES_PER_HOUR = 60
+MINUTES_PER_DAY = 1440
+MINUTES_PER_WEEK = 10080
+MAX_SHIFT_LENGTH_MINUTES = 1380  # 23 * MINUTES_PER_HOUR
+RECURRING_SHIFT_MAX_QUANTITY = 100
+
+UNASSIGNED_USER_ID = 0
+
+HALF_HOUR_TO_HOUR = 2
+
+API_ENVELOPE = "data"
+
+PLAN_PUBLIC_KEYS = [
+    "active", "description", "max_workers", "term", "unit_price", "name"
+]
+
+DEFAULT_DELIMITER = "|"
+
+NULL_TIME_OFF_REQUEST = "null"
+SUDO_EXTERNAL_NAME = "Staffjoy Support"
+SUDO_EXTERNAL_EMAIL = "help@staffjoy.com"
+
+PHONE_COUNTRY_CODE_TO_COUNTRY = {"1": "USA and Canada", "44": "United Kingdom"}

@@ -1,0 +1,20 @@
+<div class="panel card" id="time-off-requests">
+    <div class="modal-placeholder-time-off-requests"></div>
+    <div class="panel-heading page-header">
+        <div class="pull-right">
+            <button class="btn btn-default secondary btn-sm button-align btn-spacing new-time-off-request-btn"><span class="glyphicon glyphicon-plus"></span>Time Off</button>
+            <button class="btn btn-default btn-sm button-align collapse-button collapse-btn-time-off-requests" type="button" data-toggle="collapse" data-target=".time-off-request-container">
+                {{^collapsed}}
+                <span class="glyphicon glyphicon-chevron-up"></span>
+                {{/collapsed}}
+                {{#collapsed}}
+                <span class="glyphicon glyphicon-chevron-down"></span>
+                {{/collapsed}}
+            </button>
+        </div>
+        <h3 class="panel-title">Time Off Requests</h3>
+    </div>
+    <div class="container-fluid table-responsive panel-collapse collapse {{^collapsed}} in {{/collapsed}} time-off-request-container" data-collapse-id="time-off-requests">
+        <div class="panel-body align-side" id="time-off-requests-table"></div>
+    </div>
+</div>

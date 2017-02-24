@@ -1,0 +1,36 @@
+{% extends "bootstrap.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block page_id %}auth{% endblock %}
+
+{% block title %}{{ form_title }}{% endblock %}
+
+{% block content %}
+<div class="container auth-container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-sm-12">
+            {% if current_user.is_authenticated %}
+            <a href="/auth/portal" class="btn btn-link btn-xs"><i class="glyphicon glyphicon-arrow-left"></i> Cancel</a>
+            {% endif %}
+            <div class="panel card">
+                <div class="panel-heading page-header">
+                    <h1 class="panel-title">{% block form_title %}{{form_title}}{% endblock %}</h1>
+                </div>
+
+                <div class="panel-body {% if panel_body_class %}{{panel_body_class}}{%endif%}">
+                  {% if help_text %}
+                    <p>
+                    {{help_text | safe}}
+                    </p>
+                  {% endif %}
+                    <!-- macro makes opening form -->
+                        {{ macros.better_quick_form(form) }}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

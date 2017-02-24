@@ -1,0 +1,49 @@
+{% extends "bootstrap.html" %}
+
+{% block page_id %}careers-list{% endblock %}
+{% block title %}Careers{% endblock %}
+{% block description %}Learn about working at Staffjoy{% endblock %}
+
+{% block content %}
+<script>
+    $(document).ready(function(){
+        $(".career-card").click(function(e) {
+            var self = this,
+                $target = $(e.target).closest(".career-card"),
+                path = $target.attr("data-path")
+            ;
+            e.preventDefault();
+            e.stopPropagation();
+            window.location.href = path;
+        });
+    });
+</script>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+            <h1>Careers</h1>
+            {% if careers|length == 0 %}
+            <div class="alert alert-info">
+                <h4>Check back soon!</h4>
+                <p>We currently have no positions available. However, if you are interested in learning more about jobs email <a href="mailto:team@staffjoy.com">team@staffjoy.com</a>.</p>
+            </div>
+            {% endif %}
+            {% for key, data in careers.iteritems() %}
+                <div class="panel card career-card" data-path="{{ url_for("main.career_page", slug=key) }}">
+                    <div class="panel-heading page-header">
+                        <div class="pull-right">
+                            <a class="btn btn-primary btn-sm button-align" href="{{ url_for("main.career_page", slug=key) }}">View</a>
+                        </div>
+                        <h3 class="panel-title location-card-title">
+                            {{ data["name"] }}
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>{{ data["summary"] }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+<div>
+{% endblock %}

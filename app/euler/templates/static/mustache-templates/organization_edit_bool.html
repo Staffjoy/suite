@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 col-sm-12 organization-edit-bool">
+        <div class="panel panel-info card">
+            <div class="panel-heading">
+                <h1 class="panel-title">Edit {{propertyName}}</h1>
+            </div>
+
+            <div class="panel-body">
+                Would you like to toggle {{propertyName}}? It is currently set to "{{currentVal}}".
+                <form method="post" class="form organization-edit-form" role="form">
+                    <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Toggle" >
+                </form>
+            </div>
+            <div class="panel-footer text-muted">
+                Organization {{data.id}} - {{#data.name}}{{data.name}}{{/data.name}}{{^data.name}}{{data.email}}{{/data.name}}
+
+            </div>
+        </div>
+    </div>
+</div>

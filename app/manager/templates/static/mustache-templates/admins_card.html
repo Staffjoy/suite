@@ -1,0 +1,32 @@
+<div class="panel card admins-card">
+    <div class="panel-heading page-header">
+        <h3 class="panel-title">
+            {{orgName}} Administrators
+        </h3>
+    </div>
+    <div class="container-fluid">
+        <div class="card-description">Global administrators have full control of all data, all locations, and all workers within this account.</div>
+        <div class="row">
+            <div class="col-xs-12 card-elements">
+                {{#data}}
+                <span class="card-element card-element-active condensed user-info" data-id="{{id}}">
+                    <div class="content-no-title">
+                        {{#name}}
+                            {{name}}  -  {{email}}
+                        {{/name}}
+                        {{^name}}
+                            {{email}}
+                        {{/name}}
+                        <div class="pull-right delete-admin glyphicon glyphicon-remove"></div>
+                        {{^active}}
+                        <span class="cursor-clickable reminder-email label label-warning pull-right">
+                            Inactive
+                        </span>
+                        {{/active}}
+                    </div>
+                </span>
+                {{/data}}
+            </div>
+        </div>
+    </div>
+</div>

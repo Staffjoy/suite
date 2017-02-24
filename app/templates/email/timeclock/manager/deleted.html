@@ -1,0 +1,10 @@
+{% if user.name %}<p>{{ user.name }},</p>{% endif %}
+<p>This message confirms that a timeclock for {{worker_name}} on {{original_start_date}} has been deleted. The original record is logged below:
+<br><br>
+{{before_start}} - {{before_stop}}
+</p>
+
+<p>To learn more, please log into your account:</p>
+<p><a href="{{ url }}">{{ url }}</a></p>
+
+<p>If you have any questions, please respond to this email and support will be in contact!</p>

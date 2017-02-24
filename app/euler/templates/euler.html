@@ -1,0 +1,30 @@
+{% extends "bootstrap.html" %}
+
+{% block head_extra %}
+
+{% assets "js_vendor_single_page_req" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+{% endassets %}
+
+{% assets "js_euler_app_req" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+{% endassets %}
+<script type="text/javascript">
+    API_KEY = "{{ api_token }}";
+    BLUEPRINT = "euler";
+</script>
+{% endblock %}
+
+
+{% block page_id %}euler{% endblock %}
+
+{% block title %}Euler - Internal{% endblock %}
+
+{% block content %}
+<div class="container" id="outer-container">
+    <div class="row">
+        <div id="euler-nav"></div>
+    </div>
+    <div id="euler-container"></div>
+</div>
+{% endblock %}

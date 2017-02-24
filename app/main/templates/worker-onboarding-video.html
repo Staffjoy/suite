@@ -1,0 +1,20 @@
+{% extends "bootstrap.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="col-sm-12 col-md-8 col-md-offset-2">
+        <h1>Welcome to Staffjoy</h1>
+
+        <iframe style="max-width: 100%; width: 100%" width="600" height="450" src="https://www.youtube-nocookie.com/embed/{{youtube_video_id}}?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
+        <p>Thanks activating your Staffjoy account! Your organization is using Staffjoy to manage scheduling. Check out the short training video above, then click <strong>My Schedules</strong> on the navigation bar to start scheduling.</p>
+
+        <p>Don't forget to download our apps on the <a href="{{config.IPHONE_DOWNLOAD_LINK}}">App Store</a> and <a href="{{config.ANDROID_DOWNLOAD_LINK}}">Google Play</a>.</p>
+
+        <p>If you ever have questions, use the help button in the bottom-right or email us at <a href="mailto:help@staffjoy.com">help@staffjoy.com</a>.
+
+    </div>
+</div>
+{% endblock %}

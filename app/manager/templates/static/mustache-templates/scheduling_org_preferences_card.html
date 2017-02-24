@@ -1,0 +1,39 @@
+<div class="panel card">
+    <div class="panel-heading page-header">
+        <h3 class="panel-title">
+            {{strings.title}}
+        </h3>
+    </div>
+    <div class="container-fluid">
+        <div class="scheduling-preferences {{uniqueId}}">
+            <div class="setting-section">
+                <h4>
+                    Schedule Timing
+                    <a href="https://help.staffjoy.com/v1.0/docs/schedule-timing" target="_blank"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>
+                </h4>
+                <div class="row">
+                    <div class="col-xs-12 form-group" data-param-name="shifts_assigned_days_before_start">
+                        <span>
+                            Shifts will be assigned
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="shifts_assigned_days_before_start" data-toggle="dropdown" aria-expanded="true">
+                                    <span class="dropdown-value"></span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu scrollable-menu" role="menu" aria-labelledby="shifts_assigned_days_before_start"></ul>
+                            </div>
+                            before the start of each week.
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <span class="card-information">
+                            Weeks begin every <strong>{{day_week_starts}}.</strong>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

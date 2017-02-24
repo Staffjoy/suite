@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2 col-xs-12 param-edit-str">
+        <div class="panel card">
+            <div class="panel-heading page-header">
+                <h3 class="panel-title">Edit {{propertyName}}</h3>
+            </div>
+
+            <div class="panel-body">
+                <form method="post" class="form param-edit-form" role="form">
+                    <div class="form-group required"><label class="control-label" for="{{propertyName}}">{{propertyName}}</label>
+                        <input class="form-control" name="{{propertyName}}" required="" type="text" value="{{currentVal}}" id="param-edit-str">
+                    </div>
+                    <input class="btn btn-success" id="submit" name="submit" type="submit" value="Update" >
+                    <input class="btn btn-link btn-xs btn-cancel" name="cancel" type="submit" value="Cancel" >
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

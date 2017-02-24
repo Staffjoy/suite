@@ -1,0 +1,371 @@
+#myschedules {
+    background-color: @alt-background;
+
+    .planner-container {
+        min-height: 400px;
+    }
+
+    footer {
+        margin-top: 60px;
+    }
+
+    .planner-header-container h1 {
+        margin-top: 15px;
+        color: @gray-logo;
+        @media (min-width: @screen-sm-min) {
+            font-size: 1.6em;
+        }
+        @media (max-width: @screen-xs-max) {
+            font-size: 1.1em;
+        }
+    }
+
+    .well {
+        &.calendar-navigation-bar {
+            &.mobile {
+                padding: 5px;
+            }
+            &.desktop {
+                padding: 15px;
+            }
+        }
+
+        .timezone-display {
+            margin-top: -5px;
+            font-size: 15px;
+
+            &.warning {
+                color: @brand-warning;
+            }
+        }
+    }
+
+    .card {
+        .btn {
+            &.claim-shift {
+                line-height: 1.8;
+                text-transform: capitalize;
+            }
+        }
+
+        .card-element.shift-info {
+            border-top: 1px solid @gray-lighter;
+
+            &.claimed {
+                .content-no-title {
+                    color: @brand-success;
+                }
+            }
+
+            &.taken {
+                .content-no-title {
+                    color: @brand-danger;
+                }
+            }
+
+            &.unavailable {
+                opacity: 0.6;
+            }
+
+            .shift-description {
+                .shift-description-label {
+                    margin-top: 6px;
+                    margin-right: 5px;
+                    font-size: 12px;
+                    white-space: normal;
+                }
+            }
+        }
+
+        @media (max-width: @screen-xs-max) {
+            padding: 10px;
+
+            .card-header, .page-header {
+                padding: 8px 20px;
+                margin: 5px 0px;
+            }
+
+            .card-element.shift-info {
+                text-align: center;
+                font-size: 14px;
+            }
+
+            span.condensed {
+                padding: 6px 10px;
+            }
+
+            .message {
+                margin: 0px 20px;
+            }
+
+            h3 {
+                font-size: 1.3em;
+                margin-top: 0px;
+            }
+        }
+        @media (min-width: @screen-sm-min) {
+            h3 {
+                font-size: 1.6em;
+            }
+        }
+    }
+
+    .calendar-navigation-bar {
+        text-align: center;
+
+        .week-date-label {
+            .week-title {
+                @media (min-width: @screen-sm-min) {
+                    font-size: 1.3em;
+                }
+                @media (max-width: @screen-xs-max) {
+                    font-size: 1em;
+                }
+            }
+        }
+
+        .btn {
+            color: @brand-primary;
+            &.disabled {
+                color: @btn-default-color;
+            }
+        }
+
+        &.desktop {
+            margin: 10px 0px;
+        }
+
+        &.mobile {
+            margin: 0px;
+        }
+    }
+
+    .onboarding {
+        padding-top: 4%;
+
+        p {
+            font-size: 1em;
+        }
+
+        h2 {
+            margin: 15px 0px;
+            font-size: 1.8em;
+        }
+    }
+
+    .visual-shifts-placeholder {
+        .highcharts-graph {
+            height: 350px;
+        }
+    }
+
+    .availability {
+        .set-availability {
+            width: 100%;
+
+            .availability-column {
+                @media (min-width: @screen-sm-min) {
+                    display: inline-block;
+                    width: 14.28%;
+                }
+                @media (max-width: @screen-xs-max) {
+                    display: block;
+                    width: 75%;
+                    margin: 0 auto;
+                    margin-bottom: 25px;
+                }
+            }
+
+            .availability-column-header {
+                text-align: center;
+                margin: 2% 10%;
+                line-height: 1.3;
+                overflow: hidden;
+
+                @media (min-width: @screen-sm-min) {
+                    font-size: 0.9em;
+                }
+                @media (max-width: @screen-xs-max) {
+                    font-size: 1.2em;
+                }
+
+            }
+
+            .availability-block {
+                color: @gray-logo;
+                text-align: center;
+                border: 1px solid @gray-lighter;
+                margin-top: -1px;
+                line-height: 1.5em;
+                width: 80%;
+                margin: auto;
+                overflow: hidden;
+
+                @media (min-width: @screen-sm-min) {
+                    height: 21px;
+                    font-size: 0.8em;
+                }
+                @media (max-width: @screen-xs-max) {
+                    font-size: 1.1em;
+                    height: 25px;
+                }
+
+                &.active {
+                    background-color: @brand-primary-soft;
+                }
+
+                &.inactive {
+                    background-color: #fff;
+                }
+
+                &.disabled {
+                    background-color: @gray-lighter;
+
+                    span {
+                        color: @gray;
+                    }
+                }
+            }
+        }
+
+        .save-availability {
+            text-align: right;
+            padding: 2% 2% 2% 0%;
+        }
+    }
+
+    .timeclock-nav-btn {
+        color: white;
+        background-color: @brand-success;
+    }
+
+    .timeclock-nav-icon {
+        font-size: 1.6em;
+        margin-right: 6px;
+        vertical-align: text-bottom;
+    }
+
+    .timeclock-nav-inactive {
+        color: @brand-success;
+    }
+
+    .timeclock-nav-active {
+        color: white;
+    }
+
+    .timecard-total-row {
+        background-color: @gray-lighter;
+    }
+
+    .timeclock-label {
+        font-size: 18px;
+        color: @gray-light;
+        text-align: center;
+    }
+
+    .duration-text {
+        font-size: 25px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .current-time-text {
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .timeclock-container {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .timeclock-content {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .timeclock-button-container {
+        width: 100%;
+        text-align: center;
+    }
+
+    .clocked-in-container {
+        @media (min-width: @screen-sm-min) {
+            border-right: 2px solid @gray-lighter;
+        }
+    }
+
+    .duration-container {
+        @media (min-width: @screen-sm-min) {
+            border-bottom: 2px solid @gray-lighter;
+        }
+    }
+
+    .clock-container {
+        margin-top: 10px;
+    }
+
+    #clock {
+        position: relative;
+        bottom: 10px;
+    }
+
+    .timecard-content {
+        @media (max-width: @screen-xs-min) {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    }
+
+    .header-btn {
+        @media (max-width: @screen-sm-min) {
+            margin-bottom: 10px;
+        }
+    }
+
+    .back-icon {
+        margin-right: 6px;
+    }
+
+    .cal-nav-btn {
+        margin-top: 9px;
+    }
+
+    .cancel-icon {
+        color: @brand-danger;
+        margin-left: 5px;
+    }
+
+    .time-off-request-button-container {
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+        button {
+            margin-right: 2px;
+            white-space: normal;
+        }
+    }
+
+    .preferences-body {
+        @media (max-width: @screen-xs-min) {
+            padding: 5px 5px 20px;
+        }
+    }
+
+    .preferences-card .timegrid .timegrid-block {
+        height: 60px;
+
+        .label-container {
+            margin-top: 5px;
+            @media (min-width: @screen-sm-min) {
+                margin-top: 10px;
+            }
+        }
+
+        .subLabel {
+            color: @gray;
+            font-size: 12px;
+            font-weight: 100;
+        }
+    }
+}

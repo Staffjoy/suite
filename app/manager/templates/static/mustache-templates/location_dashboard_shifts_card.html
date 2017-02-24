@@ -1,0 +1,61 @@
+{{#isEmpty}}
+<div class="location-dashboard-empty-card col-xs-12 col-sm-6 col-sm-offset-3">
+    <div class="fa-stack fa-lg">
+        <i class="fa fa-circle-o fa-stack-2x"></i>
+        <i class="fa fa-check fa-stack-1x"></i>
+    </div>
+    <div class="text-center">
+      <h3>Nobody is working right now</h3>
+      <h3 class="small text-info">(Check back here during a workday for real-time attendance insights)</h3>
+    </div>
+</div>
+{{/isEmpty}}
+{{^isEmpty}}
+<div class="panel card location-dashboard-shifts-card">
+    <div class="container-fluid table-responsive">
+        <div class="panel-body align-side">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="col-xs-1 col-sm-1 status">Status</th>
+                        <th class="col-xs-1 col-sm-2">Name</th>
+                        <th class="col-xs-1 col-sm-3">Notes</th>
+                        <th class="col-sm-3 hidden-xs">Scheduled</th>
+                        <th class="col-sm-3 hidden-xs">Timeclocks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#unassociatedShifts}}
+                    <tr class="location-dashboard-shifts-card-element danger">
+                        <td class="icon-col">
+                            <span class="fa fa-check" data-toggle="tooltip" data-placement="top" title="Clocked In"/>
+                        </td>
+                        <td><span data-toggle="tooltip" data-placement="top" title="{{role}}">{{name}}</span></td>
+                        <td>Clocked in when not scheduled</td>
+                        <td class="hidden-xs"></td>
+                        <td class="hidden-xs"></td>
+                    </tr>
+                    {{/unassociatedShifts}}
+                    {{#shifts}}
+                    <tr class="location-dashboard-shifts-card-element {{background}}">
+                        <td class="icon-col">
+                          <span class="fa {{icon}}" {{#tooltip}}data-toggle="tooltip" data-placement="top" title="{{tooltip}}"{{/tooltip}}/>
+                        </td>
+                        <td><span data-toggle="tooltip" data-placement="top" title="{{role}}">{{name}}</span></td>
+                        <td>{{message}}</td>
+                        <td class="hidden-xs">{{start}} - {{stop}}</td>
+                        <td class="hidden-xs">
+                            {{#timeclocks}}
+                            <div>
+                                {{start}} - {{stop}}
+                            </div>
+                            {{/timeclocks}}
+                        </td>
+                    </tr>
+                    {{/shifts}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{{/isEmpty}}

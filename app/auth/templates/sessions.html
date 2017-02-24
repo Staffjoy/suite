@@ -1,0 +1,85 @@
+{% extends "bootstrap.html" %}
+
+{% block page_id %}auth{% endblock %}
+
+{% block head_extra %}
+<script>
+$(document).ready(function() {
+    $(".delete-session").click(function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        var $target = $(e.target),
+            userId = $target.data("user-id"),
+            key = $target.data("key"),
+            route = "/api/v2/users/" + userId + "/sessions/" + key,
+            success,
+            error
+        ;
+
+        $.ajax({
+            url: route,
+            type: "DELETE",
+            xhrFields: {
+                withCredentials: true
+            },
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("Authorization", "Basic " + btoa("{{ api_token }}:"));
+            },
+            success: function(result) {
+                location.reload();
+            },
+            error: function(result) {
+                $.notify({message:"Unable to delete session."},{type:"danger"});
+            },
+        });
+    });
+});
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="container auth-container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-sm-12">
+            <a href="/auth/portal" class="btn btn-link btn-xs"><i class="glyphicon glyphicon-arrow-left"></i> Go Back</a>
+            <div class="panel card">
+                <div class="panel-heading page-header">
+                    <h1 class="panel-title">Active Sessions</h1>
+                </div>
+
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th class="col-xs-4">Last Used</th>
+                                    <th class="col-xs-4">IP Address</th>
+                                    <th class="col-xs-4 text-center">Force Logout</th>
+                                </tr>
+                            </thead>
+                            {% for data in current_user.get_all_sessions()|sorted_sessions %}
+                            <tr>
+                                <td class="col-xs-4">{{data["last_used"]|duration}}</td>
+                                <td class="col-xs-4">{{data["remote_ip"]}}</td>
+                                <td class="text-center col-xs-4"><span class="glyphicon glyphicon-remove delete-session" data-key="{{data["key"]}} "data-user-id="{{current_user.id}}"></span></td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                    <div class="delete-sessions">
+                        {{ macros.better_quick_form(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

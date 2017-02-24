@@ -1,0 +1,4 @@
+<h1>Activate Your Trial</h1>
+<p>{{ user.name }},</p>
+<p>To confirm your account and begin your free trial, click this link:</p>
+<a href="{{ url_for('auth.confirm', token=token, _external=True) }}">{{ url_for('auth.confirm', token=token, _external=True) }}</a>

@@ -1,0 +1,35 @@
+<div class="modal fade smoky-bg" id="add-location-manager-modal" tabindex="-1" role="dialog" aria-labelledby="addLocationManagerLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Add a Location Manager</h4>
+            </div>
+            <div class="modal-body">
+                <div class="card-description">Location managers can only view and control data specific to the locations they manage.</div>
+                <div class="row add-email-form">
+                    <form class="form-inline add-location-manager">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <div class="form-group required">
+                                    <label class="control-label" for="email">Email</label>
+                                    <input class="form-control" name="email" required type="text" placeholder="Required" id="location-manager-email">
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" for="name">Name</label>
+                                    <input class="form-control" name="name" type="text" placeholder="Optional" id="location-manager-name">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary add-location-manager-button">Add</button>
+            </div>
+        </div>
+    </div>
+</div>

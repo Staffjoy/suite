@@ -1,0 +1,87 @@
+{% extends "bootstrap.html" %}
+
+{% block page_id %}auth{% endblock %}
+
+{% block head_extra %}
+<script>
+$(document).ready(function() {
+    $(".delete-session").click(function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        var $target = $(e.target),
+            userId = $target.data("user-id"),
+            key = $target.data("key"),
+            route = "/api/v2/users/" + userId + "/apikeys/" + key,
+            success,
+            error
+        ;
+
+        $.ajax({
+            url: route,
+            type: "DELETE",
+            xhrFields: {
+                withCredentials: true
+            },
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("Authorization", "Basic " + btoa("{{ api_token }}:"));
+            },
+            success: function(result) {
+                location.reload();
+            },
+            error: function(result) {
+                $.notify({message:"Unable to delete API Key."},{type:"danger"});
+            },
+        });
+    });
+});
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="container auth-container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-sm-12">
+            <a href="/auth/portal" class="btn btn-link btn-xs"><i class="glyphicon glyphicon-arrow-left"></i> Go Back</a>
+            <div class="panel card">
+                <div class="panel-heading page-header">
+                    <h1 class="panel-title">Active API Keys</h1>
+                </div>
+
+                <div class="panel-body">
+                    <p>API keys allow computer programs to access your account data. If you develop with the Staffjoy API, subscribe to the <a href="https://groups.google.com/forum/#!forum/staffjoy-api-updates">Staffjoy API Updates Google Group</a> for critical updates.</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <colgroup>
+                                <col class="first-col">
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th class="col-xs-5">Label</th>
+                                    <th class="col-xs-4">Last Used</th>
+                                    <th class="col-xs-3 text-center">Revoke</th>
+                                </tr>
+                            </thead>
+                            {% for key in api_keys %}
+                            <tr>
+                                <td class="xs-6">{{key.name}}</td>
+                                <td class="xs-6">{{key.last_used|duration}}</td>
+                                <td class="text-center"><span class="glyphicon glyphicon-remove delete-session" data-key="{{key.id}}" data-user-id="{{current_user.id}}"></span></td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                    <div class="btn-center">
+                        <a href="{{ url_for("auth.api_key") }}" class="btn btn-primary">Add a new API Key</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

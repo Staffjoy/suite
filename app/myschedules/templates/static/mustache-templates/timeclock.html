@@ -1,0 +1,30 @@
+<div class="panel card timeclock">
+    <div class="panel-heading page-header">
+        <h3 class="panel-title">Timeclock</h3>
+    </div>
+    <div class="container-fluid">
+        <div class="panel-body timeclock-container">
+            <div class="timeclock-content">
+                <div class="row duration-container">
+                    <div class="col-xs-12 col-sm-6 clocked-in-container">
+                        <div class="timeclock-label">Start</div>
+                        <div id="clockedIn" class="duration-text">{{clockedIn}}</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 elapsed-container">
+                        <div class="timeclock-label">Duration</div>
+                        <div id="elapsed" class="duration-text"></div>
+                    </div>
+                </div>
+                <div class="row clock-container">
+                    <div class="col-xs-12">
+                        <div class="timeclock-label">Current Time</div>
+                        <div id="clock" class="current-time-text"></div>
+                    </div>
+                </div>
+                <div class="timeclock-button-container">
+                    <button type="button" id="timeclockButton" class="btn btn-primary"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

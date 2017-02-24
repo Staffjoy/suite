@@ -1,0 +1,63 @@
+<div class="modal smoky-bg" id="shiftControlModal-{{id}}" tabindex="-1" role="dialog" aria-labelledby="shiftControlModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                {{^newShift}}
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                {{/newShift}}
+                <h4 class="modal-title" id="shiftControlModalLabel">{{title}}</h4>
+            </div>
+            <div class="modal-body shift-controls">
+                <div class="container-fluid">
+                    <div class="row">
+                        <span>Start:</span>
+                        <input type="text" class="form-control" id="start-datetimepicker-{{id}}"/>
+                    </div>
+                    <div class="row">
+                        <span>Stop:</span>
+                        <input type="text" class="form-control" id="stop-datetimepicker-{{id}}"/>
+                    </div>
+                    <div class="row info-display">
+                        <span>Duration:</span>
+                        <span class="display-text" id="durationText-{{id}}"></span>
+                    </div>
+                    <div class="row info-display">
+                        <span>Assign To:</span>
+                        <div class="dropdown display-text">
+                            <select class="select-worker-{{id}}"></select>
+                        </div>
+                    </div>
+                    <div id="message-display" class="row info-display">
+                        <span></span>
+                        <div id="preferencesWarning-{{id}}" class="notify dangerous">
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            Violates scheduling rules
+                        </div>
+                        <div id="tooLongWarning-{{id}}" class="alert hidden alert-danger">
+                            Shifts must be less than 23 hours long.
+                        </div>
+                        <div id="stopBeforeStartWarning-{{id}}" class="alert hidden alert-danger">
+                            Start time must be before stop time.
+                        </div>
+                    </div>
+                    <div class="row info-display">
+                        <span>Notes:</span>
+                        <div class="dropdown display-text">
+                            <input type="text" maxlength="256" class="description-input description-{{id}}" placeholder="Optional details for the worker" value="{{description}}"></input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                {{#newShift}}
+                    <button type="button" class="btn btn-link cancel btn-sm delete-shift-{{id}}">Cancel</button>
+                    <button type="button" class="btn btn-success btn-sm save-shift-{{id}}">Save</button>
+                {{/newShift}}
+                {{^newShift}}
+                    <button type="button" class="btn btn-danger btn-sm delete-shift-{{id}}">Delete</button>
+                    <button type="button" class="btn btn-info btn-sm" data-dismiss="modal">Close</button>
+                {{/newShift}}
+            </div>
+        </div>
+    </div>
+</div>

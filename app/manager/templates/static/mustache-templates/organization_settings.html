@@ -1,0 +1,77 @@
+<div class="row">
+    <div class="col-xs-12 col-md-offset-2 col-md-8">
+        <a href="#locations" class="view-locations"><i class="fa fa-long-arrow-left"></i> View locations</a>
+        <div class="panel card">
+            <div class="panel-heading page-header">
+                <h3 class="panel-title">
+                    {{name}} Account
+                </h3>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 card-elements roomy org-properties">
+                        <span class="card-element card-element-active" data-param="name">
+                            <div class="title">Name</div>
+                            <div class="content">{{ name }}</div>
+                        </span>
+                        <a class="card-element card-element-active" data-param="paid" href="/billing/organizations/{{id}}">
+                            <div class="title">Plan</div>
+                            <div class="content">
+                                <div>{{planName}} {{#enterprise_access}} Enterprise{{/enterprise_access}}</div>
+                            </div>
+                        </a>
+                        <a class="card-element card-element-active" data-param="paid" href="/billing/organizations/{{id}}">
+                            <div class="title">Billing</div>
+                            <div class="content">
+                                    {{#paid}}
+                                    <div>Paid</div>
+                                    {{/paid}}
+                                    {{^paid}}
+                                    <div class="text-danger">Action Required</div>
+                                    {{/paid}}
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="add-admin-modal-placeholder"/>
+        <div class="organization-scheduling-preferences"></div>
+        <div class="organization-default-scheduling-preferences"></div>
+        <div class="timeclock-placeholder"></div>
+        <div class="time-off-request-placeholder"></div>
+        <div class="admins-placeholder"></div>
+        <div class="location-managers-placeholder"/>
+        <div class="email-reminder-modal-placeholder"/>
+        <div class="panel card danger-zone">
+                <div class="panel-heading page-header">
+                    <h3 class="panel-title">
+                        Danger Zone
+                    </h3>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12 card-elements">
+                            {{#active}}
+                            <span class="card-element">Clicking here will stop scheduling and notifications for {{name}}.</span>
+                            {{/active}}
+                            {{^active}}
+                            <span class="card-element activate">Clicking below will resume scheduling and notifications for {{name}}.</span>
+                            {{/active}}
+                        </div>
+                        <div class="card-main-button">
+                            {{#active}}
+                            <span class="btn btn-danger deactivate">Deactivate {{name}}</span>
+                            {{/active}}
+                            {{^active}}
+                            <span class="btn btn-primary activate">Activate {{name}}</span>
+                            {{/active}}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

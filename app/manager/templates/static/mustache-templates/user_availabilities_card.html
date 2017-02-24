@@ -1,0 +1,35 @@
+<div class="panel card">
+    <div class="panel-heading page-header">
+        <div class="pull-right">
+            <button class="btn btn-default btn-sm button-align collapse-button collapse-btn-past-availability" type="button" data-toggle="collapse" data-target=".card-table-container">
+                <span class="glyphicon glyphicon-chevron-down"></span>
+            </button>
+        </div>
+        <h3 class="panel-title">Past Availability</h3>
+    </div>
+    <div id="modal-availability-placeholder"></div>
+    <div class="container-fluid card-table-container scroll panel-collapse collapse" data-collapse-id="past-availability">
+        <div class="card-table-indent">
+            <p>Below is the availability set by the worker. If a week is not shown, then the worker did not set their availability for that week.</p>
+            {{#showData}}
+            <table class="table table-hover table-condensed">
+                <tbody>
+                    {{#data}}
+                    <tr>
+                        <td>{{week}}</td>
+                        <td>
+                            <div class="btn btn-primary btn-sm view-availability" data-scheduleId="{{scheduleId}}">View</div>
+                        </td>
+                    </tr>
+                    {{/data}}
+                </tbody>
+            </table>
+            {{/showData}}
+            {{^showData}}
+            <div class="no-data">
+                <p>{{userName}} has never set availability.</p>
+            </div>
+            {{/showData}}
+        </div>
+    </div>
+</div>

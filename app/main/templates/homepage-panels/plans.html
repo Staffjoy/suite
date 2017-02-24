@@ -1,0 +1,53 @@
+<div class="homepage-panel" id="plans">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-8 col-md-offset-2 ">
+                <div class="container-fluid">
+                    <div class="row plan-row">
+                        <div class="col-xs-12 plan-line">
+                            <h1>Plans and Pricing</h1>
+                        </div>
+                    </div>
+                    <div class="row top-card-row">
+                        <div class="col-sm-6">
+                            <div class="well card">
+                                <h1 class="plan">{{ plans["flex-v2"].name }}</h1>
+                                <h2 class="for">for contractors</h2>
+                                <hr class="im-a-line"/>
+                                <div class="under-line-content">
+                                  <p class="description">{{ plans["flex-v2"].description }}</p>
+                                  <h1 class="price">${{ (plans["flex-v2"].unit_price / 100) | int }}</h1>
+                                  <div class="per">monthly, up to 40 contractors</div>
+                                </div>
+                                <a href="{{url_for('main.flex_landing') }}" class="sign-up btn btn-primary btn-lg">Learn about Flex</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="well card">
+                                <h1 class="plan">{{ plans["boss-v2"].name }}</h1>
+                                <h2 class="for">for employees</h2>
+                                <hr class="im-a-line"/>
+                                <div class="under-line-content">
+                                  <p class="description">{{ plans["boss-v2"].description }}</p>
+                                  <h1 class="price">${{ (plans["boss-v2"].unit_price / 100) | int }}</h1>
+                                  <div class="per">monthly, up to 40 employees</div>
+                                </div>
+                                <a href="{{url_for('main.boss_landing') }}" class="sign-up btn btn-primary btn-lg">Learn about Boss</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-bottom-row row">
+                        <div class="col-xs-12">
+                            <div class="well card enterprise">
+                                <h1 class="plan">Enterprise</h1>
+                                <hr class="im-a-line"/>
+                                <p class="about-enterprise">Custom workflows, tiered access controls, and technical integrations for medium and large-sized workforces.</p>
+                                <a href="{{url_for('auth.free_trial', enterprise_access=True) }}" class="sign-up btn btn-info btn-lg">Try Enterprise</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

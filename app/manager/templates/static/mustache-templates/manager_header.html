@@ -1,0 +1,46 @@
+<div>
+    <div id="manager-header-action" class="pull-right"/>
+    <div class="org-name-container">
+        {{#isOrgAdmin}}
+        <div type="button" class="btn btn-link nav-button header-org-name" data-route="settings">
+            <div class="pull-left">
+                <strong>{{orgName}}</strong><span class="fa fa-cog"/>
+            </div>
+        </div>
+        {{/isOrgAdmin}}
+        {{^isOrgAdmin}}
+        <div class="header-org-name">
+            <strong>{{orgName}}</strong>
+        </div>
+        {{/isOrgAdmin}}
+    </div>
+    <div id="manager-header-nav">
+        <div class="location-nav-container">
+            {{#singleLocation}}
+            <div type="button" class="btn btn-link nav-button location-nav single-location" data-route="locations">
+                {{name}}
+            </div>
+            {{/singleLocation}}
+            {{^singleLocation}}
+            <select class="header-location-select"/>
+            {{/singleLocation}}
+        </div>
+        <div class="manager-content-nav">
+            <div type="button" class="btn btn-link nav-button nav-button-dashboard" data-route="dashboard">
+                <i class="fa fa-tachometer side-nav-icon"></i>Dashboard
+            </div>
+            <div type="button" class="btn btn-link nav-button nav-button-scheduling" data-route="scheduling">
+                <svg class="gantt"></svg>Scheduling
+            </div>
+            <div type="button" class="btn btn-link nav-button nav-button-attendance" data-route="attendance">
+                <i class="glyphicon glyphicon-time side-nav-icon"></i>Attendance
+            </div>
+            <div type="button" class="btn btn-link nav-button nav-button-roles" data-route="roles">
+                <i class="fa fa-users side-nav-icon"></i>Team Roles
+            </div>
+            <div type="button" class="btn btn-link nav-button nav-button-preferences" data-route="preferences">
+                <i class="fa fa-cog side-nav-icon"></i>Preferences
+            </div>
+        </div>
+    </div>
+</div>

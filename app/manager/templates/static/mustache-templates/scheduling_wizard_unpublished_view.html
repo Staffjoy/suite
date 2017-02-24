@@ -1,0 +1,45 @@
+<div class="wizard-modal-container">
+    <div class="modal fade smoky-bg" id="wizardModal-{{roleId}}" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    <h4 class="modal-title">Assign {{roleName}} Now</h4>
+                </div>
+                <div class="modal-body">
+                    Staffjoy automatically assigns and publishes your shifts according to your organization settings. You may override this and and have the schedule created and published now by clicking below.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary wizard-modal-button" data-action="mobius-confirm">Assign and Publish</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel card wizard-card {{#stateUnpublished}}panel-warning{{/stateUnpublished}}" id="wizard-{{roleId}}">
+    <div class="panel-heading page-header">
+        <h3 class="panel-title">{{roleName}} Shifts Unpublished</h3>
+    </div>
+    <div class="container-fluid wizard-card-content">
+        <div class="panel-body">
+            <div class="card-description">
+            {{#isBoss}}
+            {{roleName}} shifts will be automatically assigned and published in {{timeUntilAssignment}}. To manually publish them now, <a class='wizard-button' data-action='mobius-modal'>click here</a>.
+            {{/isBoss}}
+            </div>
+            <div class="card-content">
+                {{^chomped}}
+                <div>
+                    To have Staffjoy compute the shifts, <a class='wizard-button' data-action='chomp'>click here</a>.
+                </div>
+                {{/chomped}}
+                {{#isFlex}}
+                <div class="publish-button-container">
+                    <div class="btn btn-primary btn-md wizard-button" data-action="publish">Publish Now</div>
+                </div>
+                {{/isFlex}}
+            </div>
+        </div>
+    </div>
+</div>

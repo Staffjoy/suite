@@ -1,0 +1,74 @@
+{% extends "bootstrap.html" %}
+
+{% block page_id %}portal{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <div class="panel card">
+                <div class="panel-heading page-header">
+                    <h3 class="panel-title">My Account</h3>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12 card-elements roomy">
+                            <a href="{{ url_for("auth.change_name") }}">
+                                <div class="title">Name</div>
+                                <div class="content">{{ current_user.name }}</div>
+                            </a>
+                            <a href="{{ url_for("auth.change_username") }}">
+                                <div class="title">Username</div>
+                                <div class="content">{{ current_user.username }}</div>
+                            </a>
+                            <a href="{{ url_for("auth.change_email_request") }}">
+                                <div class="title">Email</div>
+                                <div class="content">{{ current_user.email }}</div>
+                            </a>
+                            <a href="{{ url_for("auth.change_password") }}">
+                                <div class="title">Password</div>
+                                <div class="content">&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;</div>
+                            </a>
+                            <a href="{{ url_for("auth.phone_number_router") }}">
+                                <div class="title">Phone Number</div>
+                                <div class="content">
+                                  {% if current_user.phone_number %}
+                                    {{current_user.pretty_phone_number}}
+                                  {% elif current_user.get_phone_data_pending_verification() %}
+                                    <span class="text-danger">Verification Required</span>
+                                  {% else %}
+                                    <span class="text-warning">Add Your Phone Number</span>
+                                  {% endif %}
+                                </div>
+                            </a>
+                            <a href="{{ url_for("auth.notifications") }}">
+                                <div class="title">Notifications</div>
+                                <div class="content">
+                                    {% if enabled_notifications_count == total_notifications %}
+                                        Enabled
+                                    {% elif enabled_notifications_count == 0 %}
+                                        <span class="text-danger">Disabled</span>
+                                    {% else %}
+                                        <span class="text-warning">Partially Disabled</span>
+                                    {% endif %}
+                                </div>
+                            </a>
+                            <a href="{{ url_for("auth.api_keys") }}">
+                                <div class="title">API Keys</div>
+                                <div class="content">{{ api_keys }} Key{% if api_keys != 1 %}s{% endif %}</div>
+                            </a>
+                            <a href="{{ url_for("auth.sessions") }}">
+                                <div class="title">Active Sessions</div>
+                                <div class="content">{{ current_user.get_all_sessions()|length }} Session{% if current_user.get_all_sessions()|length != 1 %}s{% endif %}</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+

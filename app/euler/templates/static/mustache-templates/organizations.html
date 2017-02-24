@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col-xs-12 col-md-6">
+        <h2>
+            Organizations {{#has_previous}}<small>(Page {{page}})</small>{{/has_previous}}
+        </h2>
+    </div>
+    <div class="col-xs-12 col-md-6">
+        <span class="btn btn-primary euler-table-action-btn pull-right">New Organization</span>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-condensed">
+                <colgroup>
+                    <col class="first-col">
+                    <col>
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Plan</th>
+                        <th>Active</th>
+                    </tr>
+                </thead>
+                {{#data}}
+                <tr class="org-row" data-id="{{ id }}">
+                    <td>{{ id }}</td>
+                    <td>{{ name }}</td>
+                    <td>{{ planName }}</td>
+                    {{#active}}
+                        <td><span class="label label-primary">Active</span></td>
+                    {{/active}}
+                    {{^active}}
+                        <td><span class="label label-danger">Inactive</span></td>
+                    {{/active}}
+                </tr>
+                {{/data}}
+            </table>
+        </div>
+        <nav class="pull-right">
+            <ul class="pagination">
+                <li>
+                    {{#has_previous}}
+                    <span class="previous pagination-button">&laquo;</span>
+                    {{/has_previous}}
+                </li>
+                <li>
+                    <span>Page {{ page }}</span>
+                </li>
+                <li>
+                    {{#has_next}}
+                    <span class="next pagination-button">&raquo;</span>
+                    {{/has_next}}
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

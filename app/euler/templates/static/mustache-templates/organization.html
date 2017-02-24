@@ -1,0 +1,113 @@
+<div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <div class="well card">
+            <h3 class="page-header">
+                {{#data.name}}
+                    {{data.name}}
+                {{/data.name}}
+                {{^data.name}}
+                    Organization #{{data.id}}
+                {{/data.name}}
+            </h3>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="card-elements">
+                        <span class="card-element">
+                            <div class="title">Id</div>
+                            <div class="content">{{ data.id }}</div>
+                        </span>
+                        <span class="card-element card-element-active" data-param="name">
+                            <div class="title">Name</div>
+                            <div class="content">{{ data.name }}</div>
+                        </span>
+                        <span class="card-element card-element-active" data-param="active">
+                            <div class="title">Active</div>
+                            <div class="content">
+                                {{#data.active}}
+                                    <span class="label label-primary">Active</span>
+                                {{/data.active}}
+                                {{^data.active}}
+                                    <span class="label label-danger">Inactive</span>
+                                {{/data.active}}
+                            </div>
+                        </span>
+                        <span class="card-element" data-param="created_at">
+                            <div class="title">Created At</div>
+                            <div class="content">{{data.created_at}} (UTC)</div>
+                        </span>
+                        <span class="card-element" data-param="paid">
+                            <div class="title">Paid</div>
+                            <div class="content">
+                                {{#data.paid}}
+                                    <span class="label label-primary">Yes</span>
+                                {{/data.paid}}
+                                {{^data.paid}}
+                                    <span class="label label-danger">Trial</span>
+                                {{/data.paid}}
+                            </div>
+                        </span>
+                        <span class="card-element card-element-active" data-param="paid_until">
+                            <div class="title">Paid Until</div>
+                            <div class="content">
+                                {{#data.paid_until}}
+                                {{data.paid_until}} (UTC)
+                                {{/data.paid_until}}
+                                {{^data.paid_until}}
+                                Paid Until Date Not Set
+                                {{/data.paid_until}}
+                            </div>
+                        </span>
+                        <span class="card-element card-element-active" data-param="trial_days">
+                            <div class="title">Trial Days</div>
+                            <div class="content">{{ data.trial_days }}</div>
+                        </span>
+                        <span class="card-element" data-param="plan">
+                            <div class="title">Plan</div>
+                            <div class="content">
+                                {{planName}}{{#data.enterprise_access}} Enterprise{{/data.enterprise_access}}
+                            </div>
+                        </span>
+                        <span class="card-element card-element-active" data-param="enterprise_access">
+                            <div class="title">Enterprise Access</div>
+                            <div class="content">
+                                {{#data.enterprise_access}}
+                                    <span class="label label-primary">On</span>
+                                {{/data.enterprise_access}}
+                                {{^data.enterprise_access}}
+                                    <span class="label label-danger">Off</span>
+                                {{/data.enterprise_access}}
+                            </div>
+                        </span>
+                        <span class="card-element card-element-active" data-param="enable_shiftplanning_export">
+                            <div class="title">Show ShiftPlanning Download Button</div>
+                            <div class="content">
+                                {{#data.enable_shiftplanning_export}}
+                                    <span class="label label-primary">On</span>
+                                {{/data.enable_shiftplanning_export}}
+                                {{^data.enable_shiftplanning_export}}
+                                    <span class="label label-danger">Off</span>
+                                {{/data.enable_shiftplanning_export}}
+                            </div>
+                        </span>
+                        <span class="card-element card-element-active" data-param="early_access">
+                            <div class="title">Early Access</div>
+                            <div class="content">
+                                {{#data.early_access}}
+                                    <span class="label label-primary">On</span>
+                                {{/data.early_access}}
+                                {{^data.early_access}}
+                                    <span class="label label-default">Off</span>
+                                {{/data.early_access}}
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card-main-button">
+                        <span data-organization-id="{{data.id}}" class="btn btn-primary go-to-organization">Visit Organization</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

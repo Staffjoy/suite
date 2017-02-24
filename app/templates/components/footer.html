@@ -1,0 +1,39 @@
+<footer id="bootstrap-footer" class="hidden-native">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 col-xs-12">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="https://www.staffjoy.com">Staffjoy Home</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 hidden-xs">
+                <h4>Need Help?</h4>
+                <ul>
+                    <li><a href="https://github.com/staffjoy/suite">Github Project</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 hidden-xs">
+                <h4>Learn More</h4>
+                <ul>
+                    <li><a href="https://blog.staffjoy.com">Staffjoy Blog</a></li>
+                    <li>
+                        {% for key, link in config.SOCIAL.iteritems() %}
+                        <a href="{{ link }}" class="btn btn-social-icon btn-{{ key }} btn-xs"><i class="fa fa-{{ key }}"></i></a>
+                        {% endfor %}
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <!-- this used to have our contact info -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <span class="copyright pull-right">
+                    &copy; 2017 Staffjoy, Inc. All rights reserved.
+                </span>
+            </div>
+        </div>
+    </div>
+</footer>

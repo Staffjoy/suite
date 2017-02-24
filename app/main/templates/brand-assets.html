@@ -1,0 +1,66 @@
+{% extends "bootstrap.html" %}
+
+{% block page_id %}brand-assets{% endblock %}
+{% block title %}Brand Assets{% endblock %}
+{% block description %}Images, descriptions, and and other assets of the Staffjoy brand.{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+            <h1 class="page-header">Staffjoy Brand Assets</h1>
+            <img src="/static/images/brand-assets/logo/staffjoy.png" alt="Staffjoy logo"/ class="logo">
+            <h2>Description</h2>
+            <blockquote>
+                Staffjoy provides the first workforce tool that builds schedules entirely automatically, while respecting worker preferences and not requiring human scheduler. The web app collects worker availability and business demand, and then schedules workers according to their preferences, as well as the business’s rules. Businesses save money by regaining time spent scheduling, as they utilize the more efficient schedules. 
+            </blockquote>
+
+            <h2>Images</h2>
+            <table class="table table-bordered brand-assets-table">
+                <tr>
+                    <th></th>
+                    <th class="center">Low-Res</th>
+                    <th class="center">High-Res</th>
+                    <th class="center">Vector</th>
+                </tr>
+                <tr>
+                    <th>Logo</th>
+                    <td class="center"><a href="/static/images/brand-assets/logo/staffjoy.png">PNG<a></td>
+                    <td class="center"></td>
+                    <td class="center"><a href="/static/images/brand-assets/logo/logo.svg">SVG<a></td>
+                </tr>
+                <tr>
+                    <th>Logo Square</th>
+                    <td class="center"><a href="/static/images/brand-assets/logo/square_low.png">PNG<a></td>
+                    <td class="center"></td>
+                    <td class="center"><a href="/static/images/brand-assets/logo/square.svg">SVG<a></td>
+                </tr>
+                <tr>
+                    <th>Logo Inverse</th>
+                    <td class="center"><a href="/static/images/brand-assets/logo/staffjoy_inverse_low.png">PNG<a></td>
+                    <td class="center"></td>
+                    <td class="center"><a href="/static/images/brand-assets/logo/staffjoy_inverse.svg">SVG<a></td>
+                </tr>
+                <tr>
+                    <th>Logo Square Inverse</th>
+                    <td class="center"><a href="/static/images/brand-assets/logo/staffjoy_square_inverse.png">PNG<a></td>
+                    <td class="center"></td>
+                    <td class="center"><a href="/static/images/brand-assets/logo/staffjoy_square_inverse.svg">SVG<a></td>
+                </tr>
+                <tr>
+                    <th>Philip Thomas, Co-Founder and CEO</a></th>
+                    <td class="center"><a href="/static/images/brand-assets/philip/low.jpg">JPG<a></td>
+                    <td class="center"><a href="/static/images/brand-assets/philip/high.jpg">JPG<a></td>
+                    <td class="center"></td>
+                </tr>
+                <tr>
+                    <th>Philip Thomas, Co-Founder and CEO <span class="text-muted">(square)</span></th>
+                    <td class="center"><a href="/static/images/brand-assets/philip/square_low.jpg">JPG<a></td>
+                    <td class="center"><a href="/static/images/brand-assets/philip/square_high.jpg">JPG<a></td>
+                    <td class="center"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+<div>
+{% endblock %}

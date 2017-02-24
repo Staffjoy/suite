@@ -1,0 +1,10 @@
+{% if user.name %}<p>{{ user.name }},</p>{% endif %}
+<p>Your {{org_name}} manager <a href="mailto:{{manager_email}}">{{manager_name}}</a> deleted your timeclock on {{original_start_date}}. The original record is logged below:
+<br><br>
+{{before_start}} - {{before_stop}}
+</p>
+
+<p>To learn more, please log into your account:</p>
+<p><a href="{{ url }}">{{ url }}</a></p>
+
+<p>If you have any questions, please respond to this email and support will be in contact!</p>

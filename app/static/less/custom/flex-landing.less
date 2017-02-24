@@ -1,0 +1,301 @@
+#flex-landing {
+    @media screen and (min-width: 1000px) {
+        // Body
+        padding-top: 0;
+        #main-header {
+            opacity: .94;
+        }
+    }
+
+    .flex-panel {
+        .content-parent {
+            height: 350px;
+        }
+
+        .center {
+            text-align: center;
+        }
+        min-height: 100px;
+        width: 100%;
+        margin: 0%;
+
+        h1, h2, p {
+            margin: 0%;
+        }
+
+        img {
+            margin: 0 auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .content-parent {
+             -webkit-transform-style: preserve-3d;
+             -moz-transform-style: preserve-3d;
+             transform-style: preserve-3d;
+
+            .content, img {
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                p {
+                    font-size: 18px;
+                    color: @gray-logo;
+                    padding-top: 20px;
+                }
+                h2 {
+                    font-size: 36px;
+                    color: @gray-logo;
+                }
+            }
+        }
+        @media (max-width: @screen-sm-min) {
+            .content {
+                text-align: center;
+            }
+        }
+        @media (max-width: (@screen-sm-min - 1)) {
+            img.content {
+                padding-left: 10%;
+                padding-right: 10%;
+            }
+        }
+        object {
+            width: 100px;
+            height: 100%;
+        }
+    }
+
+    #flex-overview {
+        text-align: center;
+        background: rgba(182, 192, 204, 1);
+        .container {
+            padding-top: 74px;
+        }
+        h1 {
+            font-size: 62px;
+            line-height: 1.5;
+            color: #ffffff;
+            font-weight: 100;
+            padding-top: 65px;
+            padding-bottom: 10px;
+            line-height: 55px;
+        }
+
+        p {
+            padding-top: 35px;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1.3;
+            color: #ffffff;
+            padding-bottom: 20px;
+        }
+
+        .btn {
+            font-size: 17px;
+            padding: 13px 30px;
+
+
+        }
+
+        .sign-up {
+            margin-top: 30px;
+        }
+
+        height: 660px;
+        .content-parent {
+            height: 550px;
+        }
+        background: url('/static/images/flex-landing/Header@2x.jpg') no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        @media screen and (max-width: 1000px) {
+            height: 345px;
+            .content-parent {
+                height: 250px;
+            }
+            p {
+                padding-top: 5px;
+                font-size:14px;
+                padding-bottom: 0;
+            }
+            h1 {
+                padding-top: 40px;
+                font-size: 45px;
+            }
+        }
+        @media screen and (max-width: 1000px) {
+            p {
+                padding-top: 5px;
+                font-size:14px;
+                padding-bottom: 0;
+            }
+            h1 {
+                padding-top: 0px;
+                font-size: 45px;
+            }
+        }
+        @media screen and (max-width: 672px) {
+            p {
+                padding-top: 5px;
+                font-size:14px;
+                padding-bottom: 0;
+            }
+            h1 {
+                font-size: 30px;
+                line-height: 40px;
+            }
+        }
+    }
+    .middle {
+        padding: 52px 0;
+
+        object {
+            width: 100px;
+            height: 100px;
+        }
+        .flex-panel {
+            padding: 50px 0;
+        }
+        background-color: #f7f7f7;
+        .card {
+            object {
+                width: 45px;
+                height: 45px;
+                margin: 20px 0 30px 0;
+            }
+            padding: 0 30px;
+            .content {
+                padding: 0 80px;
+                h2 {
+                    color: #32465a;
+                    font-size: 36px;
+                    font-weight: 600;
+                }
+                p {
+                    font-size: 18px;
+                    color: #94a0ad;
+                }
+            }
+        }
+        @media (max-width: @screen-md-min) {
+            padding: 0;
+            margin: 0;
+            .flex-panel {
+                padding: 0 0 20px 0;
+            }
+            .card { 
+                margin: 0;
+            }
+            .content {
+                text-align: center;
+            }
+            h2 {
+                font-size: 18px !important;
+            }
+            p {
+                font-size: 16px !important;
+            }
+        }
+        @media screen and (max-width: @screen-sm-min) {
+            .content-parent {
+                height: 450px !important;
+            }
+
+            .container {
+                margin: 0;
+                width: 100%;
+            }
+            .content {
+                padding: 0 5px !important;
+            }
+            object { 
+                margin: 5px 0 5px 0 !important;
+            }
+            p {
+                font-size: 15px;
+            }
+        }
+
+    }
+    .cta {
+        .panel {
+            text-align: center;
+            max-width: 370px;
+            margin: 0 auto 120px auto;
+            box-shadow: 0px 1px 6px 0px rgba(208, 218, 226, 0.9);
+            border-radius: 10px;
+            .panel-heading {
+              font-size: 36px;
+              font-weight: 300;
+              .border-top-radius(9px);
+            }
+
+            .panel-body {
+              .border-bottom-radius(9px);
+              background-color: rgb(252, 252, 252);
+              .price {
+                font-weight: 100;
+                font-size: 60px;
+                color: @brand-primary;
+                margin-top: 15px;
+                .per-month {
+                  color: #848e99;
+                  font-size: 15px;
+                  font-weight: 500;
+                }
+              }
+            }
+            p {
+              color: #86909A;
+            }
+            a {
+              width: 220px;
+              font-size: 16px;
+              margin-bottom: 20px;
+            }
+
+        }
+    }
+    .columns {
+        background-color: white;
+        border-top: 2px solid #f5f5f6;
+        .col {
+            text-align: center;
+            object {
+                margin: 160px 10px 30px 10px;
+                width: 62px;
+                height: 62px;
+            }
+            h2 {
+                font-size: 30px;
+                color: #32465a;
+            }
+            p {
+                height: 160px;
+                font-size: 18px;
+                color: #94a0ad;
+            }
+        }
+        @media screen and (max-width: @screen-md-min) {
+            p {
+                max-width: 250px;
+                margin: 0 auto;
+                font-size: 15px !important;
+                height: auto !important;
+            }
+            object {
+                margin-top: 50px !important;
+                margin-bottom: 10px !important;
+                width: 50px !important;
+                height: 50px !important;
+            }
+            h2 {
+                font-size: 18px !important;
+            }
+            .row { 
+                padding-bottom: 90px;
+            }
+        }
+    }
+}

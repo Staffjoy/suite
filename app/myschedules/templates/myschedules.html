@@ -1,0 +1,50 @@
+{% extends "bootstrap.html" %}
+
+{% block intercom %}
+<script>
+    window.intercomSettings = {{ current_user.intercom_settings(org_id) | safe }};
+</script>
+{% endblock %}
+
+{% block head_extra %}
+{% assets "js_vendor_single_page_req" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+{% endassets %}
+
+{% assets "js_shared_single_page_req" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+{% endassets %}
+
+{% assets "js_myschedules_app_req" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+{% endassets %}
+
+<script type="text/javascript">
+    API_KEY = "{{ api_token }}";
+    ORG_ID = "{{ org_id }}";
+    LOCATION_ID = "{{ location_id }}";
+    ROLE_ID = "{{ role_id }}";
+    USER_ID = "{{ user_id }}";
+    BLUEPRINT = "myschedules";
+</script>
+{% endblock %}
+
+
+{% block page_id %}myschedules{% endblock %}
+
+{% block title %}My Schedules{% endblock %}
+
+{% block content %}
+<div class="container planner-container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="planner-header-container"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="planner-main"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

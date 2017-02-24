@@ -1,0 +1,61 @@
+#bootstrap-footer {
+    background-color: @gray-logo;
+    font-size: 15px;
+    padding: 50px 0;
+    font-family: @font-family-sans-serif;
+    font-size: 15px;
+    color: white;
+    // This is how we get the color to extend on longer screens
+    box-shadow: 0px 500px 0px 500px @gray-logo;
+
+    a {
+        color: @gray-lighter;
+        &:hover {
+            color: @brand-primary;
+            text-decoration: none;
+        }
+        &:active {
+            color: @gray-lighter;
+        }
+    }
+    ul {
+        padding: 0;
+        font-family: @font-family-sans-serif;
+        list-style: none;
+        li {
+            padding-bottom: 8px;
+        }
+    }
+    h1, h2, h3, h4, h5, h6 {
+        color: inherit;
+        margin-bottom: 15px;
+    }
+    .copyright {
+        font-size: 80%;
+    }
+
+    .btn-social-icon { 
+        border: none;
+    }
+
+    // Social buttons
+    .fa {
+        // Override icons to make the skeleton-style social buttons
+        background-color: @gray-logo;
+        border: 1px solid white;
+        border-radius: 3px;
+        box-shadow: none;
+        -webkit-appearance: none; 
+        -moz-appearance: none; 
+        .btn-twitter, .btn-linkedin, .btn-facebook, .btn-github {
+            background-color: @gray-logo;
+            -webkit-appearance: none; 
+            -moz-appearance: none; 
+        }
+    }
+    address {
+        .glyphicon {
+            margin-right: 5px;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+{% extends "bootstrap.html" %}
+
+{% block page_id %}case-study{% endblock %}
+{% block title %}Case Study: {{ name }}{% endblock %}
+{% block description %}{{ summary }}{% endblock %}
+{% block head_extra %}{{ header_inject | safe}}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+            <div class="byline">
+                <h5 class="text-muted case-header pull-right date">{{ publication.strftime("%-d %B %Y") }}</h5>
+                <a href="{{url_for('main.case_study_list')}}"><h5 class="case-header case-study-head pull-left">Case Study</h5></a>
+            </div>
+            {% if hero_image %}
+            <img src="{{ hero_image }}" alt="{{name}}" class="hero-image">
+            {% endif %}
+            <h1 class="page-title">{{name}}</h1>
+
+            {{body|safe}}
+
+            <div class="panel panel-info lead-capture-footer">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Learn More about Staffjoy</h3>
+                </div>
+                <div class="panel-body">
+                    <p>Enter your email to get in contact with our team and keep up with future updates:</p>
+                    <form action="//staffjoy.us8.list-manage.com/subscribe/post?u=ec5cd3617447b3dac0483cd29&amp;id=ec1e5e047a" method="post" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+                        <div class="input-group mailchimp-form">
+                            <input type="email" value="" name="EMAIL" class="form-control required email" placeholder="email@example.com">
+                            <span class="input-group-btn">
+                                <input type="submit" value="Submit" name="subscribe" class="btn btn-primary">
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<div>
+{% endblock %}

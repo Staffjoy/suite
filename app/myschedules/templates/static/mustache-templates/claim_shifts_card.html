@@ -1,0 +1,57 @@
+<div class="panel card claim-shifts">
+    <div class="panel-heading page-header">
+        <h3 class="panel-title">Available Shifts</h3>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 card-elements roomy available-shifts">
+                {{#shifts}}
+                <span class="card-element condensed shift-info" id="{{id}}" data-shift-id="{{id}}" data-schedule-id="{{schedule_id}}">
+                    <div class="content-no-title">
+                        <div class="row">
+                            <div class="hidden-xs col-sm-2">
+                                {{date}}
+                            </div>
+                            <div class="col-xs-2 col-sm-2">
+                                <div class="hidden-xs">
+                                    {{dayName}}
+                                </div>
+                                <div class="visible-xs">
+                                    {{dayNameMobile}}
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-sm-4">
+                                <div class="hidden-xs">
+                                    {{ start }} - {{end}}
+                                </div>
+                                <div class="visible-xs text-left">
+                                    {{ startMobile }} - {{endMobile}}
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-sm-2">
+                                <div class="hidden-xs">
+                                    {{length}} hours
+                                </div>
+                                <div class="visible-xs text-left">
+                                    {{length}} hrs
+                                </div>
+                            </div>
+                            <div class="col-xs-2 col-sm-2">
+                                <button class="btn btn-primary btn-xs claim-shift pull-right">Claim</button>
+                            </div>
+                            {{#description}}
+                            <div class="col-xs-12 shift-description text-left">
+                                <div class="label label-info pull-left shift-description-label">
+                                    Note:
+                                </div>
+                                <span class="text-info">{{description}}</span>
+                            </div>
+                            {{/description}}
+                        </div>
+                    </div>
+                </span>
+                {{/shifts}}
+            </div>
+        </div>
+    </div>
+</div>

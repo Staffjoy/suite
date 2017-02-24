@@ -1,0 +1,44 @@
+<div class="col-xs-12 col-sm-offset-1 col-sm-10">
+    <h2>{{roleName}} - {{userName}}</h2>
+    <div class="email-reminder-modal-placeholder"></div>
+    <div class="panel card user-role-info">
+        <div class="panel-heading page-header">
+            <h3 class="panel-title">
+                Personal Information
+            </h3>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 card-elements roomy">
+                    <span class="card-element condensed" data-param="name">
+                        <div class="title">Name</div>
+                        <div class="content">{{ name }}</div>
+                    </span>
+                    {{^active}}
+                    <span class="card-element condensed" data-param="email">
+                        <div class="title">Status</div>
+                        <div class="content">
+                            <span class="cursor-clickable reminder-email btn btn-warning btn-sm">
+                                Inactive
+                            </span>
+                        </div>
+                    </span>
+                    {{/active}}
+                    <span class="card-element condensed" data-param="email">
+                        <div class="title">Email</div>
+                        <div class="content">{{ email }}</div>
+                    </span>
+                    <span class="card-element card-element-active condensed" data-param="internal_id">
+                        <div class="title">Worker ID</div>
+                        <div class="content">{{ internal_id }}</div>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scheduling-preferences-placeholder"></div>
+    <div class="recurring-shifts-placeholder"/>
+    <div class="working-hours-card-placeholder"></div>
+    <div class="past-availability-placeholder"></div>
+    <div class="danger-zone-placeholder"></div>
+</div>

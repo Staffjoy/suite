@@ -1,0 +1,36 @@
+<div class="panel card" id="attendance-csv">
+    <div class="panel-heading page-header">
+        <div class="pull-right">
+            <button id="quick-csv-download" class="btn btn-primary btn-sm button-align btn-spacing download-csv-btn"><span class="glyphicon glyphicon-download-alt"></span>Download</button>
+            <button class="btn btn-default btn-sm button-align collapse-button collapse-btn-attendance-csv" type="button" data-toggle="collapse" data-target=".day-attendance-container-csv">
+                <span class="glyphicon glyphicon-chevron-down"></span>
+            </button>
+        </div>
+        <h3 class="panel-title">CSV Export</h3>
+    </div>
+    <div class="container-fluid table-responsive panel-collapse collapse day-attendance-container-csv" data-collapse-id="attendance-csv">
+        <div class="panel-body card-align timeclock-csv">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="card-elements roomy">
+                        <span class="card-element no-padding">
+                            <div class="title">Start:</div>
+                            <div class="content">
+                                <input type="text" class="form-control" id="start-datetimepicker-csv"/>
+                            </div>
+                        </span>
+                        <span class="card-element no-padding">
+                            <div class="title">End:</div>
+                            <div class="content">
+                                <input type="text" class="form-control" id="stop-datetimepicker-csv"/>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary btn-md download-csv-btn pull-right">
+                <span class="glyphicon glyphicon-download-alt"></span>Download
+            </button>
+        </div>
+    </div>
+</div>

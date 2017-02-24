@@ -1,0 +1,36 @@
+<div class="panel card wizard-card" id="wizard-{{roleId}}">
+    <div class="panel-heading page-header">
+        <h3 class="panel-title">Construct {{roleName}} Shift Schedule</h3>
+    </div>
+    <div class="container-fluid wizard-card-content">
+        <div class="panel-body">
+            <div class="card-content">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div>First we have to set up the shifts, then Staffjoy will automatically assign them.</div>
+                    </div>
+                </div>
+                <div class="row option-container">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="option-one">
+                            <div class="option-content">
+                                <div class="option-title"><strong>Option 1</strong></div>
+                                <div class="option-description">Have Staffjoy compute the optimal shift scaffold based on your forecasts</div>
+                                <div class="btn btn-primary btn-md wizard-button" data-action="chomp">Set Forecasted Demand</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="option-two">
+                            <div class="option-content">
+                                <div class="option-title"><strong>Option 2</strong></div>
+                                <div class="option-description">Manually create the shifts for {{roleName}}, then have Staffjoy assign it.</div>
+                                <div class="btn btn-primary btn-md wizard-button" data-action="manual">Manually Construct</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

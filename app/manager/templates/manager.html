@@ -1,0 +1,53 @@
+{% extends "bootstrap.html" %}
+
+{% block intercom %}
+<script>
+    window.intercomSettings = {{ current_user.intercom_settings(organization.id) | safe }};
+</script>
+{% endblock %}
+
+{% block head_extra %}
+
+{% assets "js_vendor_single_page_req" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+{% endassets %}
+
+{% assets "js_shared_single_page_req" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+{% endassets %}
+
+{% assets "js_manager_app_req" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+{% endassets %}
+
+<script type="text/javascript">
+    API_KEY = "{{ api_token }}";
+    ORG_ID = "{{ organization.id }}";
+    BLUEPRINT = "manager";
+    ERROR_MESSAGE = "An error has occurred - please try again, and contact support if it continues."
+</script>
+{% endblock %}
+
+
+{% block page_id %}manager{% endblock %}
+
+{% block title %}Manager{% endblock %}
+
+{% block content %}
+
+<div class="messages-header"></div>
+<div class="container manage-container">
+    <div class="row">
+        <div class="col-xs-12 col-md-6 manage-organization-name-container"></div>
+        <div class="col-xs-12 col-md-6 top-nav-view"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-2">
+            <div id="manage-side-nav"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="manage-main"></div>
+    </div>
+</div>
+{% endblock %}

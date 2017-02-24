@@ -1,0 +1,28 @@
+<div class="panel card role-card" data-role="{{id}}">
+    <div class="panel-heading page-header">
+        <div class="pull-right">
+            <div class="btn btn-primary btn-sm button-align edit-role">View</div>
+        </div>
+        <h3 class="panel-title role-card-title">
+            {{name}}
+        </h3>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 card-elements role-users roomy">
+                {{#users}}
+                <span class="card-element card-element-active condensed role-user" data-user-id="{{id}}">
+                    <div class="content-no-title">
+                        {{ name }}
+                        {{^active}}
+                        <span class="cursor-clickable reminder-email label label-warning pull-right">
+                            Inactive
+                        </span>
+                        {{/active}}
+                    </div>
+                </span>
+                {{/users}}
+            </div>
+        </div>
+    </div>
+</div>

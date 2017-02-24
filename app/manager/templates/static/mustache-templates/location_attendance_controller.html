@@ -1,0 +1,39 @@
+<div class="col-xs-12">
+    <div class="attendance-calendar">
+        {{#timeclockOnboard}}
+            <div class="row onboarding">
+                <div class="alert alert-dismissable alert-info">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    Timeclock is currently turned off for all roles in {{locationName}}. To begin collecting time and attendance data, visit  <a href="#settings">Organization Settings</a>.
+                </div>
+            </div>
+        {{/timeclockOnboard}}
+        <div class="attendance-navigation-bar well card {{#displayTimezone}}short-bottom{{/displayTimezone}}">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2 col-sm-3">
+                        <div class="btn-group btn-group-sm" role="group" aria-label="scheduling-navigation">
+                            <button type="button" class="btn btn-default change-week left-arrow" data-direction="left">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            </button>
+                            <button type="button" class="btn btn-default disabled change-week right-arrow" data-direction="right">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="week-date-label col-md-7 col-sm-5">
+                        <span class="week-title hidden-sm"></span>
+                        <span class="week-title-mobile visible-sm"></span>
+                        {{#displayTimezone}}
+                        <div class="timezone-display {{#timezoneWarning}}warning{{/timezoneWarning}}">{{timezone}}</div>
+                        {{/displayTimezone}}
+                    </div>
+                    <div class="col-md-3 col-sm-4 text-right"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="attendance-days-placeholder"></div>
+    <div class="attendance-summary-placeholder"></div>
+    <div class="attendance-csv-placeholder"></div>
+</div>

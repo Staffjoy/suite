@@ -1,0 +1,47 @@
+<div class="col-sm-6 col-sm-offset-3 col-xs-12 worker-add">
+    <div class="panel card">
+        <div class="panel-heading page-header">
+            <h3 class="panel-title">Add Worker</h3>
+        </div>
+
+        <div class="panel-body">
+            <form method="post" class="form add-worker-form" role="form">
+                <div class="form-group required">
+                    <label class="control-label" for="email">Email</label>
+                    <input class="form-control" name="email" required type="text" placeholder="Required" id="add-worker-email">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="name">Name</label>
+                    <input class="form-control" name="name" type="text" placeholder="Optional" id="add-worker-name">
+                </div>
+                <div class="hours-per-workweek {{#isFlex}} hidden {{/isFlex}}">
+                    <h4>Total Hours Per Week</h4>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 form-group" data-param-name="min_hours_per_workweek">
+                            <label>Min:</label>
+                            <div class="dropdown indent">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="min_hours_per_workweek" data-value="20" data-toggle="dropdown" aria-expanded="true">
+                                    <span class="dropdown-value"></span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu scrollable-menu" role="menu" aria-labelledby="min_hours_per_week"></ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 form-group" data-param-name="max_hours_per_workweek">
+                            <label>Max:</label>
+                            <div class="dropdown indent">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="max_hours_per_workweek" data-value="40" data-toggle="dropdown" aria-expanded="true">
+                                    <span class="dropdown-value"></span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu scrollable-menu" role="menu" aria-labelledby="max_hours_per_week"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input class="btn btn-success submit-add-worker action-button" id="submit" name="submit" type="submit" value="Add Worker" >
+                <input class="btn btn-link cancel-add-worker action-button btn-xs" id="cancel" name="cancel" type="submit" value="Cancel" >
+            </form>
+        </div>
+    </div>
+</div>

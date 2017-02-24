@@ -1,0 +1,20 @@
+<div class="cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 content-parent">
+                <div class="content panel panel-primary">
+                  <div class="panel-heading">
+                      Staffjoy {{plan.name}}
+                    </div>
+                    <div class="panel-body">
+                      <h1 class="price">${{ (plan.unit_price / 100) | int }}<span class="per-month"><span class="per">/</span>MO</span></h1>
+                      <p>For up to {{plan.max_workers}} workers</p>
+                      <a href="{{ url_for("auth.free_trial", plan="boss-v2") }}" class="sign-up btn btn-primary btn-lg">Start a free trial</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

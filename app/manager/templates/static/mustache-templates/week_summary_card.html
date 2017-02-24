@@ -1,0 +1,33 @@
+<div class="panel card week-summary">
+    <div class="panel-heading page-header">
+        <div class="pull-right">
+            <button class="btn btn-default btn-sm button-align collapse-button collapse-button-week-summary" type="button" data-toggle="collapse" data-target=".week-summary-table-container">
+                <span class="glyphicon glyphicon-chevron-down"></span>
+            </button>
+        </div>
+        <h3 class="panel-title">Summary</h3>
+    </div>
+    <div class="container-fluid table-responsive week-summary-table-container panel-collapse collapse" data-collapse-id="week-summary">
+        <div class="panel-body align-side">
+            {{#shiftSummaries}}
+            <h4>{{roleName}}</h4>
+            <table class="table table-striped table-hover table-condensed">
+                <thead>
+                    <th class="col-xs-6">Worker</th>
+                    <th class="col-xs-3">Shifts</th>
+                    <th class="col-xs-3">Hours</th>
+                </thead>
+                <tbody>
+                    {{#data}}
+                    <tr>
+                        <td>{{user_name}}</td>
+                        <td>{{shifts}}</td>
+                        <td>{{duration}}</td>
+                    </tr>
+                    {{/data}}
+                </tbody>
+            </table>
+            {{/shiftSummaries}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+{% extends "bootstrap.html" %}
+
+{% block page_id %}homepage{% endblock %}
+
+{% block content %}
+<div class="panels">
+    {% include "homepage-panels/overview.html" %}
+    {% include "homepage-panels/panel-demand.html" %}
+    {% include "homepage-panels/panel-availability.html" %}
+    {% include "homepage-panels/panel-schedule.html" %}
+</div>
+{% endblock %}

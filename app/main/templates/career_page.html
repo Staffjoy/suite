@@ -1,0 +1,31 @@
+{% extends "bootstrap.html" %}
+
+{% block page_id %}career{% endblock %}
+{% block title %}Open Position: {{name}} - {{location}}{% endblock %}
+{% block description %}{{ summary }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+            <div class="byline">
+                <a class="text-muted header-apply btn btn-xs btn-primary pull-right" href="{{config.CAREER_APPLICATION_URL}}" target="_BLANK">Apply For This Job</h5>
+                <a href="{{url_for('main.careers')}}"><h5 class="text-muted career-header pull-left">Open Position</h5></a>
+            </div>
+            {% if hero_image %}
+            <img src="{{ hero_image }}" alt="{{name}}" class="hero-image">
+            {% endif %}
+            <h1 class="page-title">
+                {{name}}
+            </h1>
+            <h5 class="text-muted">{{location}}</h5>
+
+            {{body|safe}}
+
+            <a class="btn btn-block btn-primary btn-apply" href="{{config.CAREER_APPLICATION_URL}}" target="_BLANK">
+                Click Here to Apply
+            </a>
+        </div>
+    </div>
+<div>
+{% endblock %}

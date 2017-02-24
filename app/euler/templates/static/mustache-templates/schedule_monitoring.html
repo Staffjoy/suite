@@ -1,0 +1,153 @@
+<div class="row">
+    <div class="col-xs-12 col-md-6">
+        <h2>
+            Schedule Monitoring
+        </h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <h3>Chomp Schedules</h3>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <colgroup>
+                    <col class="first-col">
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Sched. Id</th>
+                        <th>Organization</th>
+                        <th>Location</th>
+                        <th>Role</th>
+                        <th>View Org</th>
+                        <th>Paid</th>
+                        <th>Plan</th>
+                        <th>System</th>
+                        <th>Last update</th>
+                        <th>Processing</th>
+                        <th>State</th>
+                        <th>Requeue</th>
+                    </tr>
+                </thead>
+                {{#chomp}}
+                <tr class="user-row {{#processingState}}{{#dangerState}}danger{{/dangerState}}{{^dangerState}}success{{/dangerState}}{{/processingState}}">
+                    <td>{{scheduleId}}</td>
+                    <td>{{organization}}</td>
+                    <td>{{location}}</td>
+                    <td>{{role}}</td>
+                    <td>
+                        <div class="btn btn-default btn-sm view-org" data-organizationId="{{organizationId}}">
+                            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> View
+                        </div>
+                    </td>
+                    {{#paid}}
+                        <td>Yes</td>
+                    {{/paid}}
+                    {{^paid}}
+                        <td>No</td>
+                    {{/paid}}
+                    <td>{{plan}}</td>
+                    <td>{{schedulingSystem}}</td>
+                    <td>{{lastUpdate}}</td>
+                    <td>{{processingTime}}</td>
+                    <td>{{state}}</td>
+                    {{#processingState}}
+                        <td>
+                            <div class="btn btn-default secondary btn-sm requeue-schedule" data-organizationId="{{organizationId}}" data-locationId="{{locationId}}" data-roleId="{{roleId}}" data-scheduleId="{{scheduleId}}" data-type="{{type}}">
+                                <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Requeue
+                            </div>
+                        </td>
+                    {{/processingState}}
+                    {{^processingState}}
+                        <td></td>
+                    {{/processingState}}
+                </tr>
+                {{/chomp}}
+            </table>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <h3>Mobius Schedules</h3>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <colgroup>
+                    <col class="first-col">
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Sched. Id</th>
+                        <th>Organization</th>
+                        <th>Location</th>
+                        <th>Role</th>
+                        <th>View Org</th>
+                        <th>Paid</th>
+                        <th>Plan</th>
+                        <th>System</th>
+                        <th>Last update</th>
+                        <th>Processing</th>
+                        <th>State</th>
+                        <th>Requeue</th>
+                    </tr>
+                </thead>
+                {{#mobius}}
+                <tr class="user-row {{#processingState}}{{#dangerState}}danger{{/dangerState}}{{^dangerState}}success{{/dangerState}}{{/processingState}}">
+                    <td>{{scheduleId}}</td>
+                    <td>{{organization}}</td>
+                    <td>{{location}}</td>
+                    <td>{{role}}</td>
+                    <td>
+                        <div class="btn btn-default btn-sm view-org" data-organizationId="{{organizationId}}">
+                            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> View
+                        </div>
+                    </td>
+                    {{#paid}}
+                        <td>Yes</td>
+                    {{/paid}}
+                    {{^paid}}
+                        <td>No</td>
+                    {{/paid}}
+                    <td>{{plan}}</td>
+                    <td>{{schedulingSystem}}</td>
+                    <td>{{lastUpdate}}</td>
+                    <td>{{processingTime}}</td>
+                    <td>{{state}}</td>
+                    {{#processingState}}
+                        <td>
+                            <div class="btn btn-default secondary btn-sm requeue-schedule" data-organizationId="{{organizationId}}" data-locationId="{{locationId}}" data-roleId="{{roleId}}" data-scheduleId="{{scheduleId}}" data-type="{{type}}">
+                                <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Requeue
+                            </div>
+                        </td>
+                    {{/processingState}}
+                    {{^processingState}}
+                        <td></td>
+                    {{/processingState}}
+                </tr>
+                {{/mobius}}
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,723 @@
+#manager {
+    background-color: @alt-background;
+
+    footer {
+        margin-top: 75px;
+    }
+
+    .manage-organization-name-container h1 {
+        margin-top: 15px;
+        font-size: 40px;
+        color: @gray-logo;
+        display: inline-block;
+    }
+
+    #manage-side-nav {
+
+        .page-header {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .panel-body {
+            padding: 0;
+        }
+
+        .panel-title {
+            font-size: 20px;
+            word-wrap: break-word;
+        }
+        span {
+            padding: 10px 15px;
+        }
+        .side-nav-icon {
+            margin-right: 5px;
+            min-width: 25px;
+            text-align: center;
+        }
+    }
+
+    .create-new-action {
+        text-align: center;
+        padding-top: 20px;
+        color: @gray-logo;
+
+        span {
+            display: inline-block;
+            cursor: pointer;
+            margin: 2px;
+
+            &.underlined {
+                font-weight: 600;
+                border-bottom: solid 2px @gray-logo;
+            }
+
+            &:hover {
+                color: @brand-primary;
+
+                span {
+                    &.underlined {
+                        border-bottom: solid 2px @brand-primary;
+                    }
+                }
+            }
+        }
+    }
+
+    .onboarding {
+        .alert {
+            margin: 10px;
+        }
+    }
+
+    .card {
+        .card-message {
+            margin: 10px 40px;
+        }
+
+        .btn.new-shift span, .new-shift-button span {
+            &.glyphicon {
+                margin-right: 5px;
+            }
+        }
+
+        .card-table-container {
+
+            &.scroll {
+                max-height: 400px;
+                overflow-y: auto;
+            }
+
+            .card-table-indent {
+                padding: 0px 25px;
+
+                &.bottom {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+
+        .card-element-active {
+            .delete-user {
+                color: @brand-danger-soft;
+                padding: 6px 0px;
+
+                &:hover {
+                    color: @brand-danger;
+                }
+            }
+
+            .reminder-email {
+                margin-top: 5px;
+                margin-right: 5px;
+            }
+        }
+
+        .delete-admin, .delete-location-manager {
+            margin-left: 15px;
+            color: @brand-danger-soft;
+            padding: 6px 0px;
+
+            &:hover {
+                color: @brand-danger;
+            }
+        }
+
+        .dropdown-title {
+            &.inline {
+                display: inline-block;
+                margin-right: 20px;
+                margin-left: 25px;
+                width: 200px;
+                color: @gray-darker;
+                max-width: 100%;
+            }
+        }
+
+        .dropdown{
+            &.inline {
+                display: inline-block;
+            }
+        }
+
+        .timeclock-radio {
+            &.default-setting {
+                margin-left: 15px;
+            }
+        }
+
+        .new-timeclock-btn, .download-csv-btn {
+            >.glyphicon {
+                margin-right: 5px;
+            }
+        }
+
+        .some-space {
+            margin-top: 5px;
+        }
+
+        .scheduling-preferences {
+            margin: 0px 27px 10px;
+
+            .card-message {
+                margin: 10px 15px;
+            }
+
+            .btn, .card-information strong {
+                text-transform: capitalize;
+            }
+
+            .dropdown {
+                display: inline-block;
+
+                &.indent {
+                    margin-left: 20px;
+                }
+            }
+
+            .checkbox {
+                line-height: 1.5;
+            }
+
+            .setting-section {
+                h4 {
+                    .glyphicon-question-sign {
+                        font-size: 16px;
+                    }
+                }
+
+                margin-bottom: 20px;
+            }
+        }
+
+        .save-btn {
+            padding-bottom: 15px;
+            margin-right: 30px;
+            text-align: right;
+
+            .btn {
+                margin-left: 10px;
+            }
+
+            .discard-button {
+                margin-left: 0px;
+                color: @brand-danger;
+            }
+
+            .fa {
+                margin-right: 5px;
+            }
+        }
+
+        .no-data {
+            text-align: center;
+            padding-bottom: 5px;
+
+            p {
+                font-size: 18px;
+                font-style: italic;
+            }
+        }
+
+        .panel-body {
+            &.card-align {
+                padding: 5px 25px 20px;
+            }
+        }
+
+        .timeclock-csv {
+            .card-elements {
+                span {
+                    &.no-padding {
+                        padding: 10px 0px;
+                        position: static;
+                    }
+                }
+
+                .title {
+                    width: 130px;
+                    margin-top: 6px;
+                }
+
+                .form-control {
+                    width: 225px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .schedule-navigation-bar {
+        display: none;
+    }
+
+    .schedule-navigation-bar, .attendance-navigation-bar {
+        padding: 10px 19px;
+
+        .week-date-label {
+
+            .week-title {
+                font-size: 22px;
+            }
+
+            .week-title-mobile {
+                font-size: 18px;
+            }
+
+            .timezone-display {
+                font-size: 15px;
+                margin-top: -5px;
+
+                &.warning {
+                    color: @brand-warning;
+                }
+            }
+        }
+        .btn {
+            color: @brand-primary;
+            &.disabled {
+                color: @btn-default-color;
+            }
+        }
+    }
+
+    .location-schedule-empty {
+        text-align: center;
+        padding-top: 30px;
+        img {
+            width: 700px;
+            max-width: 100%;
+        }
+    }
+
+    .manage-container {
+        min-height: 600px;
+    }
+
+    .schedule-calendar {
+        .schedule-notification {
+            margin: 5px 15px 0px;
+        }
+    }
+
+    .modal {
+        .shift-controls {
+            .notify {
+                margin-top: 3px;
+                display: inline;
+                font-size: 0.95em;
+
+                &.dangerous {
+                    color: @brand-warning;
+                }
+            }
+
+            .alert {
+                margin: 5px 0px;
+            }
+
+            .description-input {
+                width: 250px;
+            }
+        }
+
+        .new-time-off-request, .edit-time-off-request, .timeclock-edit, .shift-controls {
+            .row {
+                display: table;
+
+                >span {
+                    display: table-cell;
+                    vertical-align: middle;
+                    min-width: 125px;
+                }
+            }
+
+            .dropdown-toggle {
+                .text {
+                    text-transform: capitalize;
+                }
+            }
+
+            .form-control {
+                margin-bottom: 10px;
+                min-width: 250px;
+                max-width: 350px;
+
+                &.date-only {
+                     min-width: 120px;
+                     width: 120px;
+                     text-align: center;
+                }
+            }
+
+            input.number-input {
+                width: 60px;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            .info-display {
+                margin-bottom: 7px;
+
+                .display-text {
+                    display: block;
+                }
+
+                .alert {
+                    margin-bottom: 0px;
+                    padding: 10px;
+                }
+            }
+
+            margin-bottom: 12px;
+        }
+
+        .modal-dialog {
+            &.user-availability {
+                margin: 55px auto;
+            }
+        }
+    }
+
+    .collapse-button {
+        color: @brand-primary;
+    }
+
+    table.table {
+        td.table-list {
+            .edit-time-off-request {
+                cursor: pointer;
+            }
+
+            .new-timeclock {
+                cursor: pointer;
+                color: @brand-primary;
+
+                .glyphicon {
+                    font-size: 12px;
+                    color: @brand-primary;
+                }
+
+                &:hover {
+                    color: @brand-primary;
+                }
+            }
+        }
+
+        &.time-off-requests {
+            .time-off-status {
+                min-width: 65px;
+            }
+
+            .select-state {
+                min-width: 100px;
+                text-align: right;
+                font-size: 14px;
+                background-color: #fff;
+                box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+                border-radius: 1px;
+                -webkit-border-radius: 1px;
+            }
+
+            input.hours-paid {
+                min-width: 50px;
+                max-width: 75px;
+                text-align: center;
+                border: 1px #ddd solid;
+            }
+        }
+    }
+
+    .week-summary-table-container {
+        max-height: 400px;
+        overflow-y: auto;
+    }
+
+    .week-summary-table-container::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
+
+    .week-summary-table-container::-webkit-scrollbar:vertical {
+        width: 11px;
+    }
+
+    .week-summary-table-container::-webkit-scrollbar:horizontal {
+        height: 11px;
+    }
+
+    .week-summary-table-container::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        border: 2px solid white; /* should match background, can't be transparent */
+        background-color: rgba(0, 0, 0, .5);
+    }
+
+    .week-summary-table-container::-webkit-scrollbar-track {
+        background-color: #fff;
+        border-radius: 8px;
+    }
+
+    .shift-length {
+        padding-right: 30px;
+        padding-bottom: 15px;
+    }
+
+    .settings-icon {
+        font-size: 18px;
+        vertical-align: sub;
+    }
+
+    .settings-icon-text {
+        vertical-align: text-top;
+    }
+
+    .save-working-hours {
+        text-align: right;
+        padding: 2% 2% 2% 0%;
+    }
+
+    .gantt {
+        background-color: @gray;
+        -webkit-mask:  url('../images/manage/gantt.svg') no-repeat;
+        mask: url('../images/manage/gantt.svg') no-repeat;
+        -webkit-mask-size: 16px 16px;
+        mask-size: 16px 16px;
+        width: 16px;
+        height: 16px;
+        margin-right: 9px;
+        margin-left: 4px;
+    }
+
+    .add-worker-icon {
+        margin-right: 5px;
+    }
+
+    .worker-list {
+        padding-bottom: 20px;
+    }
+
+    .worker-add {
+        .dropdown {
+            display: inline-block;
+
+            &.indent {
+                margin-left: 20px;
+            }
+        }
+    }
+
+    .discard-button {
+        margin-left: 0px;
+        color: @brand-danger;
+    }
+
+    .set-demand-params {
+        .card-description {
+            margin-bottom: 20px;
+        }
+
+        .dropdown {
+            display: inline;
+        }
+    }
+
+    .publish-button-container {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+
+        .wizard-button {
+            display: inline-block;
+        }
+    }
+
+    .option-content {
+        width: 100%;
+        text-align: center;
+
+        .wizard-button {
+            display: inline-block;
+        }
+    }
+
+    .option-one {
+        @media (min-width: @screen-sm-min) {
+            border-right: 2px solid @gray-lighter;
+        }
+    }
+
+    .option-container {
+        margin-top: 10px;
+
+        @media (min-width: @screen-sm-min) {
+            border-top: 2px solid @gray-lighter;
+        }
+    }
+
+    .new-shift-button-container {
+        margin-left: 5px;
+    }
+
+    .view-locations {
+        position: relative;
+        top: 25px;
+        left: 10px;
+    }
+
+    .no-recurring-shifts {
+        text-align: center;
+        font-style: italic;
+    }
+
+    #recurring-shifts-modal {
+        .row {
+            margin-bottom: 10px;
+        }
+
+        .modal-description {
+            margin-bottom: 20px;
+        }
+    }
+
+    .recurring-shift-edit {
+        cursor: pointer;
+        color: @brand-primary;
+        margin-left: 8px;
+    }
+
+    .recurring-shift-edit-link {
+        margin-left: 0px;
+    }
+
+
+    .recurring-shifts-duration-options {
+        display: flex;
+    }
+
+    .recurring-shifts-duration-label {
+        margin: 6px 5px;
+    }
+
+    .recurring-shifts-total-row {
+        background-color: @gray-lighter;
+    }
+
+    .select-option {
+        padding: 3px 0px 0px 20px;
+    }
+
+    .add-email-form {
+        padding: 10px 25px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+
+        .form-group, .input-group, .form-control {
+            width: 100%;
+        }
+    }
+
+    .single-location {
+        padding-left: 0px;
+    }
+
+    .spreadsheet-container {
+        display: table;
+        margin: 0 auto;
+    }
+
+    .admins-card {
+        .card-description {
+            margin-left: 25px;
+        }
+    }
+
+    .header-org-name .fa-cog {
+        color: @brand-info-soft;
+        margin-left: 6px;
+        vertical-align: middle;
+        font-size: 20px;
+        word-wrap: break-word;
+        max-width: 100%;
+
+        &:hover {
+            color: @brand-info;
+        }
+    }
+
+    .location-managers-card {
+        .container-fluid {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        .no-location-managers {
+            margin-bottom: 10px;
+        }
+
+        .edit-location-manager {
+            margin-left: 8px;
+        }
+    }
+
+    .location-dashboard-empty-card {
+        padding: 80px 20px;
+        .fa-stack {
+            display: table;
+            margin: 0 auto;
+
+            .fa-circle-o {
+                color: @brand-info;
+            }
+
+            .fa-check {
+                color: @brand-success;
+            }
+        }
+    }
+
+    .location-dashboard-shifts-card {
+        .empty-dashboard {
+            margin-top: 10px;
+        }
+        th.status {
+            text-align: center;
+        }
+
+
+        .location-dashboard-shifts-card-element {
+            .fa {
+                &.fa-check {
+                    color: green;
+                }
+
+                &.fa-times {
+                    color: red;
+                }
+
+                &.fa-pause {
+                    color: orange;
+                }
+
+                &.fa-circle {
+                    color: @brand-info-soft;
+                }
+                &.fa-circle-thin {
+                  color: @gray-light;
+                }
+            }
+
+            .icon-col {
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: @screen-sm-min) {
+    body.manager-full-header {
+        padding-top: 189px;
+    }
+
+    body.manager-partial-header {
+        padding-top: 118px;
+    }
+}

@@ -1,0 +1,64 @@
+<div class="panel card timecard-card">
+    <div class="panel-heading page-header">
+        <h3 class="panel-title">Timecard</h3>
+    </div>
+    <div class="panel-body container-fluid timecard-content">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#timeclocks}}
+                    {{^timeOffRequest}}
+                    <tr>
+                        <td>{{day}}</td>
+                        <td>{{start}}</td>
+                        <td>{{stop}}</td>
+                        <td>{{duration}}</td>
+                    </tr>
+                    {{/timeOffRequest}}
+                    {{#timeOffRequest}}
+                    {{#approvedPaid}}
+                    <tr>
+                        <td>{{day}}</td>
+                        <td colspan="2">
+                            <div class="text-success">Time off</div>
+                        </td>
+                        <td>{{duration}}</td>
+                    </tr>
+                    {{/approvedPaid}}
+                    {{#approvedUnpaid}}
+                    <tr>
+                        <td>{{day}}</td>
+                        <td colspan="2">
+                            <div class="text-info">Time off</div>
+                        </td>
+                        <td>0h 0m</td>
+                    </tr>
+                    {{/approvedUnpaid}}
+                    {{#sick}}
+                    <tr>
+                        <td>{{day}}</td>
+                        <td colspan="2">
+                            <div class="text-warning">Sick Day</div>
+                        </td>
+                        <td>0h 0m</td>
+                    </tr>
+                    {{/sick}}
+                    {{/timeOffRequest}}
+                    {{/timeclocks}}
+                    <tr class="timecard-total-row">
+                        <td colspan="3">Week Total</td>
+                        <td>{{total}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

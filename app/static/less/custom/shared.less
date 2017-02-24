@@ -1,0 +1,241 @@
+.top-nav-view {
+    .btn-group {
+        max-width: 100%;
+    }
+
+    ul {
+        padding-top: 20px;
+    }
+
+    li {
+        font-size: 10pt;
+
+        &.btn {
+            max-width: 20px !important;
+            padding: 6px 0px;
+        }
+    }
+}
+
+.shift-tooltip {
+    background-color: #fff;
+    padding: 5px;
+    border: 2px solid @gray-lighter;
+    border-radius: 5px;
+    position: relative;
+    z-index: 50;
+
+    .edit-click {
+        margin-top: 2px;
+        display: inline-block;
+        border-bottom: 1px solid @brand-primary;
+        color: @brand-primary;
+        font-size: 13px;
+    }
+
+    .shift-tooltip-description {
+        width: 250px;
+        white-space: normal;
+    }
+}
+
+.shift-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    .fa-tag {
+        margin-right: 5px;
+    }
+}
+
+.spreadsheet {
+
+    margin: 5px 20px 30px 0px;
+    width: 100%;
+
+    .spreadsheet-column {
+        max-width: 120px;
+        width: 12%;
+        min-width: 35px;
+        display: inline-block;
+
+        &.label-column {
+            text-align: left;
+            max-width: 100px;
+            width: 10%;
+            min-width: 50px;
+            font-size: 13px;
+            color: @gray-dark;
+            line-height: 2.4;
+
+            label {
+                font-weight: normal;
+                margin-bottom: 0px;
+            }
+        }
+
+        .spreadsheet-column-header {
+            text-align: center;
+            font-size: 13px;
+            color: @gray-dark;
+        }
+    }
+
+    input {
+        &.spreadsheet-cell {
+            width: 100%;
+            border: 2px solid @gray-lighter;
+            box-shadow: none;
+            text-align: center;
+            font-size: 15px;
+        }
+    }
+}
+
+.card {
+    .message {
+        margin: 0px 40px;
+    }
+}
+
+.availability {
+    width: 100%;
+
+    .availability-column {
+        @media (min-width: @screen-sm-min) {
+            display: inline-block;
+            width: 14.28%;
+        }
+        @media (max-width: @screen-xs-max) {
+            display: block;
+            width: 75%;
+            margin: 0 auto;
+            margin-bottom: 25px;
+        }
+    }
+
+    .availability-column-header {
+        text-align: center;
+        margin: 2% 10%;
+        line-height: 1.3;
+        overflow: hidden;
+
+        @media (min-width: @screen-sm-min) {
+            font-size: 0.9em;
+        }
+        @media (max-width: @screen-xs-max) {
+            font-size: 1.2em;
+        }
+
+    }
+
+    .availability-block {
+        color: @gray-logo;
+        text-align: center;
+        border: 1px solid @gray-lighter;
+        margin-top: -1px;
+        line-height: 1.5em;
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+
+        @media (min-width: @screen-sm-min) {
+            height: 21px;
+            font-size: 0.8em;
+        }
+        @media (max-width: @screen-xs-max) {
+            font-size: 1.1em;
+            height: 25px;
+        }
+
+        &.active {
+            background-color: @brand-primary-soft;
+        }
+
+        &.inactive {
+            background-color: @brand-danger-soft;
+        }
+
+        &.disabled {
+            background-color: @gray-lighter;
+
+            span {
+                color: @gray;
+            }
+        }
+    }
+}
+
+.timegrid {
+    width: 100%;
+
+    .timegrid-column {
+        @media (min-width: @screen-sm-min) {
+            display: inline-block;
+            width: 14.28%;
+        }
+        @media (max-width: @screen-xs-max) {
+            display: block;
+            width: 75%;
+            margin: 0 auto;
+            margin-bottom: 25px;
+        }
+    }
+
+    .timegrid-column-header {
+        text-align: center;
+        margin: 2% 10%;
+        line-height: 1.3;
+        overflow: hidden;
+
+        @media (min-width: @screen-sm-min) {
+            font-size: 0.9em;
+        }
+        @media (max-width: @screen-xs-max) {
+            font-size: 1.2em;
+        }
+
+    }
+
+    .timegrid-block {
+        color: @gray-logo;
+        text-align: center;
+        border: 1px solid @gray-lighter;
+        margin-top: -1px;
+        line-height: 1.5em;
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+
+        @media (min-width: @screen-sm-min) {
+            height: 21px;
+            font-size: 0.8em;
+        }
+        @media (max-width: @screen-xs-max) {
+            font-size: 1.1em;
+            height: 25px;
+        }
+
+        &.active {
+            background-color: @brand-primary-soft;
+        }
+
+        &.inactive {
+            background-color: #fff;
+
+            &.dangerous {
+                background-color: @brand-danger-soft;
+                text-decoration: line-through;
+                font-weight: normal;
+            }
+        }
+
+        &.disabled {
+            background-color: @gray-lighter;
+
+            span {
+                color: @gray;
+            }
+        }
+    }
+}

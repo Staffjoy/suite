@@ -1,0 +1,72 @@
+<header id="main-header" class="navbar navbar-fixed-top navbar-default" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <button data-toggle="collapse-side" data-target=".side-collapse" type="button" class="navbar-toggle pull-left">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand pull-right hidden-xs" href="/" itemprop="name"><img src="/static/images/brand-assets/logo/logo.svg" alt="Staffjoy" id="nav-header-logo"></a>
+            <a class="navbar-brand-mobile visible-xs-block pull-left" href="/" itemprop="name"><img src="/static/images/brand-assets/logo/logo.svg" alt="Staffjoy"></a>
+        </div>
+
+        <div class="navbar-default side-collapse in">
+            <div class="content-container">
+                <nav role="navigation" class="navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right main-header-nav">
+                        {% if current_user.is_authenticated %}
+                        {% set orgs = current_user.manager_accounts() %}
+                        {% if orgs|length == 1 %}
+                        <li><a href="/manager/organizations/{{orgs[0].id}}">Manager</a></li>
+                        {% elif orgs|length > 1  %}
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Manager <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                {% for org in orgs %}
+                                <li><a href="/manager/organizations/{{org.id}}">{{org.name|default(org.id)}}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+
+                        {% endif %}
+
+                        {% set memberships = current_user.memberships() %}
+                        {% if memberships|length == 1 %}
+                        <li><a href="/myschedules/organizations/{{memberships[0].organization_id}}/locations/{{memberships[0].location_id}}/roles/{{memberships[0].role_id}}/users/{{current_user.id}}">My Schedules</a></li>
+                        {% elif memberships|length > 1  %}
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Schedules <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                {% for relation in memberships %}
+                                <li><a href="/myschedules/organizations/{{relation.organization_id}}/locations/{{relation.location_id}}/roles/{{relation.role_id}}/users/{{current_user.id}}">{{relation.organization_name|default(relation.organization_id)}} -  {{relation.role_name|default(relation.role_id)}}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+
+                        {% endif %}
+
+                        {% if current_user.is_sudo() %}
+                        <li><a href="{{ url_for("euler.index") }}">Euler</a></li>
+                        {% endif %}
+                        <li><a href="{{ url_for("auth.portal") }}">My Account</a></li>
+                        <li><a href="{{ url_for("auth.logout") }}">Logout</a></li>
+                        {% else %}
+                        <li><a href="{{ url_for("auth.login") }}">Login</a></li>
+                        {% endif %}
+                        {% if config["ALLOW_COMPANY_SIGNUPS"] %}
+                        <li class="hidden-native"><a href="{{ url_for("main.sign_up") }}" id="navbar-sign-up">Sign Up</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+                <div id="main-header-content"></div>
+            </div>
+        </div>
+        <div id="mobile-header-action"></div>
+    </div>
+</header>
+{% if active_incident %}
+<a href="https://status.staffjoy.com" class="active-incident">
+    We are actively investigating a system issue. Click here for more details.
+</a>
+{% endif %}

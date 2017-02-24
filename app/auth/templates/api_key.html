@@ -1,0 +1,42 @@
+{% extends "bootstrap.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block page_id %}auth{% endblock %}
+
+{% block title %}{{ form_title }}{% endblock %}
+
+{% block content %}
+<div class="container auth-container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-sm-12">
+            <a href="/auth/api-keys" class="btn btn-link btn-xs"><i class="glyphicon glyphicon-arrow-left"></i> Go Back</a>
+            <div class="panel card">
+                {% if plaintext_key %}
+                <div class="panel-heading page-header">
+                    <h1 class="panel-title">API Key</h1>
+                </div>
+                <div class="panel-body">
+                    <p>Below is the {{key_label}} API Key. Protect it like a password. It will never be shown again.</p>
+                    <div class="well api-key">{{ plaintext_key }}</div>
+                    <div class="btn-center">
+                        <a href="{{ url_for("auth.api_keys") }}" class="btn btn-primary">Done</a>
+                    </div>
+                </div>
+                {% else %}
+                <div class="panel-heading page-header">
+                    <h1 class="panel-title">{% block form_title %}{{form_title}}{% endblock %}</h1>
+                </div>
+
+                <div class="panel-body">
+                    <!-- macro makes opening form -->
+                        {{ macros.better_quick_form(form) }}
+                    </form>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

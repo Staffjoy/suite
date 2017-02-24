@@ -1,0 +1,16 @@
+{% if user.name %}<p>{{ user.name }},</p>{% endif %}
+<p>Your {{org_name}} manager <a href="mailto:{{manager_email}}">{{manager_name}}</a> adjusted the start time of your timeclock on {{original_start_date}}. The full changes are as follows:
+<br><br>
+Original timeclock:
+<br>
+{{before_start}}
+<br><br>
+Modified timeclock:
+<br>
+{{now_start}}
+</p>
+
+<p>To learn more, please log into your account:</p>
+<p><a href="{{ url }}">{{ url }}</a></p>
+
+<p>If you have any questions, please respond to this email and support will be in contact!</p>

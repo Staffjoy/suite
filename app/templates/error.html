@@ -1,0 +1,18 @@
+{% extends "bootstrap.html" %}
+
+{% block title %}404 - Page Not Found{% endblock %}
+
+{% block page_id %}error{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="error-display">
+        <div class="error-message">
+            <h1 class="text-danger">{% block error_message %}{% endblock %}</h1>
+            <p>{% block error_caption %}{% endblock %}</p>
+        </div>
+        <img class="error-image" src={% block error_image %}{% endblock %}>
+        {% block return %}<a href="/" class="btn btn-primary">{% block return_text %}LET'S GO HOME{% endblock %}</a>{% endblock %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{{#message}}
+<div>
+	{{#url}}
+	<a href="{{url}}" class="active-incident {{klass}}">{{message}}</a>
+	{{/url}}
+	{{^url}}
+    <div class="active-incident {{klass}}">{{message}}</div>
+	{{/url}}
+</div>
+{{/message}}

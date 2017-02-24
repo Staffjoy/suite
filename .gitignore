@@ -1,0 +1,73 @@
+*.py[cod]
+*.swp
+
+# C extensions
+*.so
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib
+lib64
+__pycache__
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Translations
+*.mo
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+
+# SQLite databases
+*.sqlite
+
+# Virtual environment
+venv
+
+# boto config 
+.boto
+
+# development api key file
+variables.sh
+
+# Ignore local vagrant cache
+.vagrant/
+vagrant-venv/
+
+# some stuff from the GAE repo
+#
+lib/
+!lib/README.md
+.DS_Store
+
+# NPM shit we don't need
+node_modules/
+npm-debug.log
+
+data.sqlite
+user.txt
+
+app/static/compiled/*
+app/static/.webassets-cache/*
+app/static/stylesheets/*
+
+# artifacts from tests
+.cache/*

@@ -1,0 +1,32 @@
+<div class="col-xs-12 col-sm-offset-2 col-sm-8">
+    {{#message}}
+    <div class="row onboarding">
+        <div class="alert alert-{{type}}">
+            {{message}}
+        </div>
+    </div>
+    {{/message}}
+    {{#data}}
+    <div class="panel card location-card" data-location="{{id}}">
+        <div class="panel-heading page-header">
+            <div class="pull-right">
+                <div class="btn btn-primary btn-sm view-location button-align">View</div>
+            </div>
+            <h3 class="panel-title location-card-title">
+                {{name}}
+            </h3>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 card-elements roomy location-roles">
+                    {{#roles}}
+                    <span class="card-element card-element-active condensed location-role" data-role-id="{{id}}">
+                        <div class="content-no-title">{{ name }}</div>
+                    </span>
+                    {{/roles}}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/data}}
+</div>

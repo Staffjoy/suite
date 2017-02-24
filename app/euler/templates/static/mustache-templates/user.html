@@ -1,0 +1,134 @@
+<div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <div class="well card">
+            {{^data.active}}
+            <div class="pull-right">
+                <button id="activation-reminder" class="btn btn-sm btn-primary btn-align">
+                    <span class="glyphicon glyphicon-envelope"></span> Send Activation Reminder
+                </button>
+            </div>
+            {{/data.active}}
+            <h3 class="page-header">
+                {{#data.name}}
+                    {{data.name}}
+                {{/data.name}}
+                {{^data.name}}
+                    {{data.email}}
+                {{/data.name}}
+            </h3>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="card-elements">
+                        <span class="card-element">
+                            <div class="title">Id</div>
+                            <div class="content">{{ data.id }}</div>
+                        </span>
+                        <span class="card-element card-element-active" data-param="name">
+                            <div class="title">Name</div>
+                            <div class="content">{{ data.name }}</div>
+                        </span>
+                        <span class="card-element card-element-active" data-param="email">
+                            <div class="title">Email</div>
+                            <div class="content">{{ data.email }}</div>
+                        </span>
+                        <span class="card-element" data-param="phone_number">
+                            <div class="title">Phone Number</div>
+                            <div class="content">{{ data.phone_number }}</div>
+                        </span>
+                        <span class="card-element card-element-active" data-param="username">
+                            <div class="title">Username</div>
+                            <div class="content">{{ data.username }}</div>
+                        </span>
+                        <span class="card-element">
+                            <div class="title">Last Activity</div>
+                            <div class="content">{{ data.last_seen }}</div>
+                        </span>
+                        <span class="card-element">
+                            <div class="title">Account Created</div>
+                            <div class="content">{{ data.member_since }}</div>
+                        </span>
+                        <span class="card-element card-element-active" data-param="active">
+                            <div class="title">Account Active</div>
+                            <div class="content">
+                                {{#data.active}}
+                                    <span class="label label-primary">Active</span>
+                                {{/data.active}}
+                                {{^data.active}}
+                                    <span class="label label-danger">Inactive</span>
+                                {{/data.active}}
+                            </div>
+                        </span>
+                        <span class="card-element">
+                            <div class="title">Email Confirmed</div>
+                            <div class="content">
+                                {{#data.confirmed}}
+                                    <span class="label label-primary">Confirmed</span>
+                                {{/data.confirmed}}
+                                {{^data.confirmed}}
+                                    <span class="label label-danger">Pending</span>
+                                {{/data.confirmed}}
+                            </div>
+                        </span>
+                        <span class="card-element card-element-active" data-param="sudo">
+                            <div class="title">Account Type</div>
+                            <div class="content">
+                                {{#data.sudo}}
+                                    <span class="label label-primary">Sudo</span>
+                                {{/data.sudo}}
+                                {{^data.sudo}}
+                                    <span class="label label-default">Normal User</span>
+                                {{/data.sudo}}
+                            </div>
+                        </span>
+                        {{#organization_admin.length}}
+                        <span class="card-element">
+                            <div class="title">Administator of</div>
+                            <div class="content">
+                                <ul>
+                                    {{#organization_admin}}
+                                    <li><a class="to-org" href="#" data-org="{{id}}">{{name}}</a></li>
+                                    {{/organization_admin}}
+                                </ul>
+                            </div>
+                        </span>
+                        {{/organization_admin.length}}
+                        {{#location_manager.length}}
+                        <span class="card-element">
+                            <div class="title">Manager of</div>
+                            <div class="content">
+                                <ul>
+                                    {{#location_manager}}
+                                    <li><a class="to-org" href="#" data-org="{{organization.id}}">{{organization.name}} - {{location.name}}</a></li>
+                                    {{/location_manager}}
+                                </ul>
+                            </div>
+                        </span>
+                        {{/location_manager.length}}
+                        {{#role_member.length}}
+                        <span class="card-element">
+                            <div class="title">Member of</div>
+                            <div class="content">
+                                <ul>
+                                    {{#role_member}}
+                                    <li><a class="to-org" href="#" data-org="{{organization.id}}">{{organization.name}} <span class="text-muted">({{name}} at {{location.name}})</span></a></li>
+                                    {{/role_member}}
+                                </ul>
+                            </div>
+                        </span>
+                        {{/role_member.length}}
+                    </div>
+                    {{#role_member.length}}
+                        <h4 class="text-center">Visit Planner</h4>
+                        {{#role_member}}
+                            <div class="row">
+                                <div class="card-main-button">
+                                    <span data-role-id="{{id}}" data-location-id="{{location.id}}" data-organization-id="{{organization.id}}" class="btn btn-primary go-to-planner">Visit {{organization.name}} - {{data.name}}</span>
+                                </div>
+                            </div>
+                        {{/role_member}}
+                    {{/role_member.length}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

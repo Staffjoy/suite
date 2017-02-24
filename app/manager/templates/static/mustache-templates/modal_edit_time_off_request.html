@@ -1,0 +1,45 @@
+<div class="modal smoky-bg" id="TimeOffRequestModal-{{id}}" tabindex="-1" role="dialog" aria-labelledby="TimeOffRequestModalLabel-{{id}}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="TimeOffRequestModalLabel-{{id}}">Edit Time Off Request</h4>
+            </div>
+            <div class="modal-body edit-time-off-request">
+                <div class="container-fluid">
+                    <div class="row info-display">
+                        <span>Worker:</span>
+                        <span class="display-text">{{userDisplayName}}  ({{roleName}})</span>
+                    </div>
+                    <div class="row info-display">
+                        <span>Date:</span>
+                        <span class="display-text">{{displayDate}}</span>
+                    </div>
+                    <div class="row">
+                        <span>Hours Paid:</span>
+                        <input class="edit-hours-paid-{{id}} number-input" type="number" value="{{hoursPaid}}" placeholder="0.00" {{#denied}}disabled{{/denied}}/>
+                    </div>
+                    <div class="row">
+                        <span>Status:</span>
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="time-off-request-state-{{id}}" data-value="{{state}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <span class="text">{{state}}</span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu select-state" aria-labelledby="time-off-request-state">
+                                <li role="presentation"><a class="dropdown-selection" role="menuitem" data-value="approved">Approved</a></li>
+                                <li role="presentation"><a class="dropdown-selection" role="menuitem" data-value="sick">Sick</a></li>
+                                <li role="presentation"><a class="dropdown-selection" role="menuitem" data-value="denied">Denied</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="edit-time-off-request-save-button-{{id}}" class="btn btn-primary btn-sm">Save</button>
+                <button type="button" id="edit-time-off-request-delete-button-{{id}}" class="btn btn-danger btn-sm">Delete</button>
+                <button type="button" class="btn btn-info btn-sm" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

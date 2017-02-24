@@ -1,0 +1,60 @@
+<div>
+    <div class="row">
+        <!-- small screen to desktop sizes -->
+        <div class="col-sm-12 hidden-xs">
+            <div class="calendar-navigation-bar desktop well card {{#displayTimezone}}short-bottom{{/displayTimezone}}">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="left-arrow col-sm-2 col-md-1">
+                            <button type="button" class="btn btn-default btn-md change-week" data-direction="left">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                        <div class="week-date-label col-sm-8 col-md-10">
+                            <span class="week-title"></span>
+                            {{#displayTimezone}}
+                            <div class="timezone-display warning">{{timezone}}</div>
+                            {{/displayTimezone}}
+                        </div>
+                        <div class="right-arrow col-sm-2 col-md-1">
+                            <button type="button" class="btn btn-default btn-md change-week" data-direction="right">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mobile friendly -->
+        <div class="col-xs-12 visible-xs">
+            <div class="calendar-navigation-bar mobile well card {{#displayTimezone}}short-bottom{{/displayTimezone}}">
+                <div class="container-fluid">
+                    <div class="right-arrow pull-right">
+                        <button type="button" class="btn btn-default btn-sm change-week cal-nav-btn" data-direction="right">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="left-arrow pull-left">
+                        <button type="button" class="btn btn-default btn-sm change-week cal-nav-btn" data-direction="left">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="week-date-label-mobile">
+                        <span class="week-title"></span>
+                        {{#displayTimezone}}
+                        <div class="timezone-display">{{timezone}}</div>
+                        {{/displayTimezone}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="planner-cards-content-placeholder">
+        <div class="message-placeholder"></div>
+        <div class="preferences-placeholder"></div>
+        <div class="visual-shifts-placeholder"></div>
+        <div class="list-shifts-placeholder"></div>
+        <div class="claim-shifts-placeholder"></div>
+        <div class="timecard-placeholder"></div>
+    </div>
+</div>

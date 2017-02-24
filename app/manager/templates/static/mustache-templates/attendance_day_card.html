@@ -1,0 +1,19 @@
+<div class="panel card" id="attendance-{{date}}">
+    <div class="modal-placeholder-{{date}}"></div>
+    <div class="panel-heading page-header">
+        <div class="pull-right">
+            <button class="btn btn-default btn-sm button-align collapse-button collapse-btn-attendance-{{date}}" type="button" data-toggle="collapse" data-target=".day-attendance-container-{{date}}">
+                {{^inFuture}}
+                <span class="glyphicon glyphicon-chevron-up"></span>
+                {{/inFuture}}
+                {{#inFuture}}
+                <span class="glyphicon glyphicon-chevron-down"></span>
+                {{/inFuture}}
+            </button>
+        </div>
+        <h3 class="panel-title">{{title}}</h3>
+    </div>
+    <div class="container-fluid table-responsive panel-collapse collapse {{^inFuture}} in {{/inFuture}} day-attendance-container-{{date}}" data-collapse-id="attendance-{{date}}">
+        <div class="panel-body align-side" id="attendance-table-{{date}}"></div>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+<div class="panel card">
+    <div class="panel-heading page-header no-margin">
+        <h3 class="panel-title">
+        {{strings.title}}
+        </h3>
+    </div>
+    <div class="container-fluid">
+        <div class="scheduling-preferences {{uniqueId}}">
+            {{#strings.infoMessage}}
+            <div class="row">
+                <div class="alert card-message alert-info">
+                    {{strings.infoMessage}}
+                </div>
+            </div>
+            {{/strings.infoMessage}}
+            <h4>Total Hours Per Workday</h4>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 form-group" data-param-name="min_hours_per_workday">
+                    <label>Min:</label>
+                    <div class="dropdown indent">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="min_hours_per_workday" data-toggle="dropdown" aria-expanded="true">
+                            <span class="dropdown-value"></span>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu scrollable-menu" role="menu" aria-labelledby="min_hours_per_workday"></ul>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 form-group" data-param-name="max_hours_per_workday">
+                    <label>Max:</label>
+                    <div class="dropdown indent">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="max_hours_per_workday" data-toggle="dropdown" aria-expanded="true">
+                            <span class="dropdown-value"></span>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu scrollable-menu" role="menu" aria-labelledby="max_hours_per_workday"></ul>
+                    </div>
+                </div>
+            </div>
+            <h4>Minimum Time Between Shifts</h4>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 form-group" data-param-name="min_hours_between_shifts">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="min_hours_between_shifts" data-toggle="dropdown" aria-expanded="true">
+                            <span class="dropdown-value"></span>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu scrollable-menu" role="menu" aria-labelledby="min_hours_between_shifts"></ul>
+                    </div>
+                </div>
+            </div>
+            <h4>Maximum Consecutive Workdays</h4>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 form-group" data-param-name="max_consecutive_workdays">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="max_consecutive_workdays" data-toggle="dropdown" aria-expanded="true">
+                            <span class="dropdown-value"></span>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu scrollable-menu" role="menu" aria-labelledby="max_consecutive_workdays"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
