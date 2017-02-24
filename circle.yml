@@ -16,7 +16,7 @@ dependencies:
     - make build
     - make db-deploy
     - python test-sudo.py
-    - python main.py runtestserver | tee log.txt:
+    - python main.py runtestserver > log.txt:
         background: true
     - sleep 30  # so server can boot
 test:
