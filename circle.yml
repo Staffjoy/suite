@@ -11,7 +11,7 @@ machine:
     - redis
 dependencies:
   override:
-    - mysql -u ubuntu circle_test -e "drop database test; create database test;"
+    - mysql -u ubuntu circle_test -e "drop database circle_test; create database circle_test;"
     - make build
     - make db-deploy
     - python test-sudo.py
