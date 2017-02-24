@@ -10,7 +10,7 @@ The authors of the original code were [@philipithomas](https://github.com/philip
 
 ## Licensing
 
-If you are using this repo for commercial purposes, please [review the Highcharts licensing requirements](https://shop.highsoft.com/highcharts?utm_expid=116444199-11.dlP5ft76QI-e766NMF5Rgw.0&utm_referrer=https%3A%2F%2Fshop.highsoft.com%2F) for commercial use, ina ddition to the `LICENSE` file in this repo.
+If you are using this repo for commercial purposes, please [review the Highcharts licensing requirements](https://shop.highsoft.com/highcharts?utm_expid=116444199-11.dlP5ft76QI-e766NMF5Rgw.0&utm_referrer=https%3A%2F%2Fshop.highsoft.com%2F) for commercial use, in addition to the `LICENSE` file in this repo.
 
 ## Running the repo for production use
 
