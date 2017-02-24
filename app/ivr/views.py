@@ -153,7 +153,7 @@ def _business_open():
 
 
 def _sales(response):
-    SALES_NUMBER = "+1<phonenumber>" 
+    SALES_NUMBER = "+1<phonenumber>"
 
     response.say(
         "Now connecting you to Staffjoy sales. " +
