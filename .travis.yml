@@ -5,9 +5,10 @@ services:
   - mysql
   - redis
 env:
-  - ENV=test
-  - PYTHONPATH="$TRAVIS_BUILD_DIR"
-  - TEST_DATABASE_URL="mysql://travis@localhost/test"
+  global:
+    - ENV=test
+    - PYTHONPATH="$TRAVIS_BUILD_DIR"
+    - TEST_DATABASE_URL="mysql://travis@localhost/test"
 before_install:
   - mysql -e 'CREATE DATABASE test;'
 install:
