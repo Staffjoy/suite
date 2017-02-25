@@ -79,7 +79,7 @@ Required for assigning shifts. Coming soon.
 ### Notes
 
 * It is suggested that you fork this repository if you are using it
-* If you do not anybody from the web signing up for your application and provisioning new organizations, modify `ALLOW_COMPANY_SIGNUPS` in `app/config.py`
+* If you do not want anybody from the web signing up for your application and provisioning new organizations, modify `ALLOW_COMPANY_SIGNUPS` in `app/config.py`
 * The Staffjoy mobile applications do not work with self-hosted applications.
 
 ## Development Setup
