@@ -10,7 +10,7 @@ env:
   global:
     - ENV=test
     - PYTHONPATH="$TRAVIS_BUILD_DIR"
-    - TEST_DATABASE_URL="mysql://travis:@127.0.0.1/test"
+    - TEST_DATABASE_URL="mysql://root:@127.0.0.1/test"
 before_install:
   - mysql -e 'CREATE DATABASE test;'
 install:
