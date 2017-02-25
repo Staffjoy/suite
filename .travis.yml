@@ -5,15 +5,15 @@ services:
   - mysql
   - redis
 env:
-- ENV=test
-- DB=postgres
-- PYTHONPATH="/home/ubuntu/suite/"
-- TEST_DATABASE_URL="mysql://travis@localhost/test"
+  - ENV=test
+  - DB=postgres
+  - PYTHONPATH="/home/ubuntu/suite/"
+  - TEST_DATABASE_URL="mysql://travis@localhost/test"
 before_install:
   - mysql -e 'CREATE DATABASE test;'
 install:
-- make build
-- make db-deploy
-- python test-sudo.py
-- python main.py runtestserver&
+  - make build
+  - make db-deploy
+  - python test-sudo.py
+  - python main.py runtestserver&
 script: make test
