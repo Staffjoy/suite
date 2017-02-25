@@ -1,6 +1,6 @@
 # Suite, aka Staffjoy V1
 
-[![CircleCI](https://circleci.com/gh/Staffjoy/suite/tree/master.svg?style=svg)](https://circleci.com/gh/Staffjoy/suite/tree/master) [![Moonlight](https://img.shields.io/badge/Contractors-1-brightgreen.svg)](https://moonlightwork.com/staffjoy)
+[![Build Status](https://travis-ci.org/Staffjoy/suite.svg?branch=master)](https://travis-ci.org/Staffjoy/suite) [![Moonlight](https://img.shields.io/badge/Contractors-1-brightgreen.svg)](https://moonlightwork.com/staffjoy)
 
 [Staffjoy is shutting down](https://blog.staffjoy.com/staffjoy-is-shutting-down-39f7b5d66ef6#.ldsdqb1kp), so we are open-sourcing our code. This version of our V1, intended for on-demand companies and call centers, has been heavily modified so that Staffjoy customers may continue using the software. 
 
