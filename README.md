@@ -58,7 +58,7 @@ Alternatively, consider just using a Jenkins job with:
 
 ### Chomp
 
-Required for calculating shifts from forecasts. Coming soon.
+Required for calculating shifts from forecasts. [View Chomp's source code on github.com/staffjoy/chomp-decomposition](https://github.com/staffjoy/chomp-decomposition)
 
 ### Mobius
 
