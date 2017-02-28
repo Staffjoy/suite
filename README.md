@@ -66,7 +66,7 @@ Required for assigning shifts. Coming soon.
 
 ### How we deployed
 
-* AWS elastic beanstalk to run the Docker containers
+* AWS elastic beanstalk to run the Docker containers ([here's our deploy script](https://gist.github.com/philipithomas/190de362654601da43a08f3dc63ce4eb))
 * AWS RDS for MySQL
 * AWS Elasticache for Redis
 * Healthcheck `/health` endpoint to determine instance health
