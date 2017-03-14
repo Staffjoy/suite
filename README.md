@@ -136,7 +136,7 @@ make shell
 Now in the shell window, write and execute the following code:
 
 ```
-print User.query.get.all() # To find users - don't do this in prod where there are lots of user :-)
+print User.query.get_all() # To find users - don't do this in prod where there are lots of user :-)
 u = User.query.get(<id>)
 u.sudo = True
 db.session.commit()
