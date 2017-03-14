@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  redis:
+    image: 'redis:3.0-alpine'
+    command: redis-server
+    ports:
+      - '6379:6379'
+  website:
+    build: .
+    command: supervisord -n
+    environment:
+      ENV: 'dev'
+      URL: 'http://localhost'
+      SERVER_NAME: 'localhost'
+      SQLALCHEMY_DATABASE_URI: "mysql://root:bacon@mysqlserver/dev"
+      REDIS_HOST: redis
+    volumes:
+      - '.:/src'
+    ports:
+      - '80:80'
+    links:
+      - db
+      - redis
+    hostname: suite
+  db:
+    hostname: mysqlserver
+    image: orchardup/mysql
+    environment:
+        MYSQL_ROOT_PASSWORD: bacon
+        MYSQL_DATABASE: dev
