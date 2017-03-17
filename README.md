@@ -48,9 +48,7 @@ TWILIO_AUTH_TOKEN | Twilio secret key |
 
 ### Cron
 
-The `/api/v2/internal/cron/` endpoint must be triggered every 60 seconds. We are open-sourcing a microserviec to do this soon. 
-
-Alternatively, consider just using a Jenkins job with:
+The `/api/v2/internal/cron/` endpoint must be triggered every 60 seconds. [We open-sourced our Cron microservice that does this](https://github.com/staffjoy/suite-cron), but consider just using a Jenkins job with:
 
 ```curl --user API_KEY: http://suite.local/api/v2/internal/cron/```
 
@@ -62,7 +60,7 @@ Required for calculating shifts from forecasts. [View Chomp's source code on git
 
 ### Mobius
 
-Required for assigning shifts. Coming soon.
+Mobius assigns workers to shifts, subject to constraints. [View Mobius's source code on github.com/staffjoy/mobius-assignment](https://github.com/staffjoy/mobius-assignment)
 
 ### How we deployed
 
