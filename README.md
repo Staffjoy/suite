@@ -4,6 +4,8 @@
 
 [Staffjoy is shutting down](https://blog.staffjoy.com/staffjoy-is-shutting-down-39f7b5d66ef6#.ldsdqb1kp), so we are open-sourcing our code. This version of our V1, intended for on-demand companies and call centers, has been heavily modified so that Staffjoy customers may continue using the software. 
 
+[API Documentation is available on staffjoy-suite.readme.io](https://staffjoy-suite.readme.io/).
+
 ## Credit
 
 The authors of the original code were [@philipithomas](https://github.com/philipithomas), [@andhess](https://github.com/andhess), and [@bahador](https://github.com/bahador). This is a fork of the internal repository. For security purposes, the Git history has been squashed.
