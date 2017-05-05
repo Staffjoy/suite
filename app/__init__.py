@@ -135,6 +135,11 @@ def create_app(config_name, register_blueprints=True):
         css_blog.build()
         css_default.build()
 
+    # Need this for custom jinja macros
+    app.jinja_env.add_extension("jinja2.ext.do")
+    app.jinja_env.filters["duration"] = date_duration
+    app.jinja_env.filters["sorted_sessions"] = sorted_sessions
+        
     # Doing this prevents circular celery imports
     # http://shulhi.com/celery-integration-with-flask/
     if register_blueprints:
