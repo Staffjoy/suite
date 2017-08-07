@@ -2,9 +2,11 @@
 
 [![Build Status](https://travis-ci.org/Staffjoy/suite.svg?branch=master)](https://travis-ci.org/Staffjoy/suite) [![Moonlight contractors](https://img.shields.io/badge/contractors-1147-brightgreen.svg)](https://moonlightwork.com/for/staffjoy)
 
-[Staffjoy is shutting down](https://blog.staffjoy.com/staffjoy-is-shutting-down-39f7b5d66ef6#.ldsdqb1kp), so we are open-sourcing our code. This version of our V1, intended for on-demand companies and call centers, has been heavily modified so that Staffjoy customers may continue using the software. 
+[Staffjoy is shutting down](https://blog.staffjoy.com/staffjoy-is-shutting-down-39f7b5d66ef6#.ldsdqb1kp), so we are open-sourcing our code. This version of our V1, intended for on-demand companies and call centers, has been heavily modified so that Staffjoy customers may continue using the software. It is a full workforce management suite, including time off requests, compliance management, and clock-in. Workers can even clock in and claim shifts. If you're managing small businesses and want only basic schedulding with text message support, please use [Staffjoy V2](https://github.com/staffjoy/v2)
 
 [API Documentation is available on staffjoy-suite.readme.io](https://staffjoy-suite.readme.io/).
+
+![Staffjoy Suite](https://user-images.githubusercontent.com/1312414/29037264-827c386a-7b68-11e7-94fd-4b1e78488956.png)
 
 ## Credit
 
