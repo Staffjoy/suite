@@ -1,6 +1,6 @@
 # Suite, aka Staffjoy V1
 
-[![Build Status](https://travis-ci.org/Staffjoy/suite.svg?branch=master)](https://travis-ci.org/Staffjoy/suite) [![Moonlight contractors](https://img.shields.io/badge/contractors-1147-brightgreen.svg)](https://moonlightwork.com/for/staffjoy) [![Docker Automated build](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)](https://hub.docker.com/r/staffjoy/suite/)
+[![Build Status](https://travis-ci.org/Staffjoy/suite.svg?branch=master)](https://travis-ci.org/Staffjoy/suite) [![Moonlight contractors](https://img.shields.io/badge/contractors-1147-brightgreen.svg)](https://moonlightwork.com/for/staffjoy)
 
 [Staffjoy is shutting down](https://blog.staffjoy.com/staffjoy-is-shutting-down-39f7b5d66ef6#.ldsdqb1kp), so we are open-sourcing our code. This version of our V1, intended for on-demand companies and call centers, has been heavily modified so that Staffjoy customers may continue using the software. 
 
@@ -13,6 +13,13 @@ The authors of the original code were [@philipithomas](https://github.com/philip
 ## Licensing
 
 If you are using this repo for commercial purposes, please [review the Highcharts licensing requirements](https://shop.highsoft.com/highcharts?utm_expid=116444199-11.dlP5ft76QI-e766NMF5Rgw.0&utm_referrer=https%3A%2F%2Fshop.highsoft.com%2F) for commercial use, in addition to the `LICENSE` file in this repo.
+
+## Demo Videos
+
+Staffjoy Suite is open-source workforce management software for large teams.
+
+* [Managing employees](https://www.youtube.com/watch?v=9I_StYG_cI4)
+* [Managing contractors](https://www.youtube.com/watch?v=2u6-VUqEECA)
 
 ## Running the repo for production use
 
